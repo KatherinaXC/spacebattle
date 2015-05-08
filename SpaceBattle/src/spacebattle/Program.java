@@ -15,7 +15,37 @@ public class Program {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Program test = new Program();
+
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(5, 0);
+        System.out.println("Test\t" + p1 + p2);
+        System.out.println("Vector\t" + test.direction(p1, p2));
+        System.out.println("Distance\t" + test.distance(p1, p2));
+
+        p1 = new Point(0, 0);
+        p2 = new Point(1000, 0);
+        System.out.println("Test\t" + p1 + p2);
+        System.out.println("Vector\t" + test.direction(p1, p2));
+        System.out.println("Distance\t" + test.distance(p1, p2));
+
+        p1 = new Point(0, 0);
+        p2 = new Point(0, 5);
+        System.out.println("Test\t" + p1 + p2);
+        System.out.println("Vector\t" + test.direction(p1, p2));
+        System.out.println("Distance\t" + test.distance(p1, p2));
+
+        p1 = new Point(0, 0);
+        p2 = new Point(0, 700);
+        System.out.println("Test\t" + p1 + p2);
+        System.out.println("Vector\t" + test.direction(p1, p2));
+        System.out.println("Distance\t" + test.distance(p1, p2));
+
+        p1 = new Point(0, 0);
+        p2 = new Point(1000, 700);
+        System.out.println("Test\t" + p1 + p2);
+        System.out.println("Vector\t" + test.direction(p1, p2));
+        System.out.println("Distance\t" + test.distance(p1, p2));
     }
 
     /**
