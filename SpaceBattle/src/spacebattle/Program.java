@@ -87,4 +87,16 @@ public class Program {
         return Math.sqrt(vector.x * vector.x + vector.y * vector.y);
     }
 
+    /**
+     * Returns the Point that the object will arrive at given the parameters.
+     *
+     * @param current the current location
+     * @param angle the angle that the object is facing (Cartesian plane)
+     * @param distToGo the distance to travel forward
+     * @return
+     */
+    public static Point targetDest(Point current, double angle, double distToGo) {
+        return new ExactPoint(current.getX() + distToGo * (Math.cos(Math.toRadians(angle))),
+                current.getY() - distToGo * (Math.sin(Math.toRadians(angle))));
+    }
 }
