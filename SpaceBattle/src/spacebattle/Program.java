@@ -57,8 +57,8 @@ public class Program {
      */
     public Point direction(Point p1, Point p2) {
         //Set up variables
-        int dx = p2.x - p1.x;
-        int dy = p2.y - p1.y;
+        int dx = Math.abs(p2.x - p1.x);
+        int dy = Math.abs(p2.y - p1.y);
         int centerx = this.worldWidth / 2;
         int centery = this.worldHeight / 2;
         //Determine if I need to wrap
