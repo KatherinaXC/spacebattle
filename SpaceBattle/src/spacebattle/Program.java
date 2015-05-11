@@ -17,35 +17,45 @@ public class Program {
     public static void main(String[] args) {
         Program test = new Program();
 
+        System.out.println("Testing Vector Direction");
         Point p1 = new Point(0, 0);
         Point p2 = new Point(5, 0);
         System.out.println("Test\t" + p1 + p2);
         System.out.println("Vector\t" + test.direction(p1, p2));
         System.out.println("Distance\t" + test.distance(p1, p2));
-
         p1 = new Point(0, 0);
         p2 = new Point(1000, 0);
         System.out.println("Test\t" + p1 + p2);
         System.out.println("Vector\t" + test.direction(p1, p2));
         System.out.println("Distance\t" + test.distance(p1, p2));
-
         p1 = new Point(0, 0);
         p2 = new Point(0, 5);
         System.out.println("Test\t" + p1 + p2);
         System.out.println("Vector\t" + test.direction(p1, p2));
         System.out.println("Distance\t" + test.distance(p1, p2));
-
         p1 = new Point(0, 0);
         p2 = new Point(0, 700);
         System.out.println("Test\t" + p1 + p2);
         System.out.println("Vector\t" + test.direction(p1, p2));
         System.out.println("Distance\t" + test.distance(p1, p2));
-
         p1 = new Point(0, 0);
         p2 = new Point(1000, 700);
         System.out.println("Test\t" + p1 + p2);
         System.out.println("Vector\t" + test.direction(p1, p2));
         System.out.println("Distance\t" + test.distance(p1, p2));
+
+        System.out.println();
+        System.out.println("Testing Target Point");
+        p1 = new Point(5, 5);
+        System.out.println("Origin:\t" + p1);
+        System.out.println("Right 5:\t" + Program.targetDest(p1, 0, 5));
+        System.out.println("Up 5:\t" + Program.targetDest(p1, 90, 5));
+        System.out.println("Left 5:\t" + Program.targetDest(p1, 180, 5));
+        System.out.println("Down 5:\t" + Program.targetDest(p1, 270, 5));
+        System.out.println("Right 1000:\t" + Program.targetDest(p1, 0, 1000));
+        System.out.println("Up 1000:\t" + Program.targetDest(p1, 90, 1000));
+        System.out.println("Left 1000:\t" + Program.targetDest(p1, 180, 1000));
+        System.out.println("Down 1000:\t" + Program.targetDest(p1, 270, 1000));
     }
 
     /**
@@ -88,7 +98,7 @@ public class Program {
     }
 
     /**
-     * Returns the Point that the object will arrive at given the parameters.
+     * Returns the Point that the object will arrive at, given the parameters.
      *
      * @param current the current location
      * @param angle the angle that the object is facing (Cartesian plane)
@@ -96,7 +106,21 @@ public class Program {
      * @return
      */
     public static Point targetDest(Point current, double angle, double distToGo) {
-        return new ExactPoint(current.getX() + distToGo * (Math.cos(Math.toRadians(angle))),
-                current.getY() - distToGo * (Math.sin(Math.toRadians(angle))));
+        double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
+        double finalY = current.getY() - distToGo * (Math.sin(Math.toRadians(angle)));
+        finalX = Program.wrap(finalX, Program.worldWidth);
+        finalY = Program.wrap(finalY, Program.worldHeight);
+        return new ExactPoint(finalX, finalY);
+    }
+
+    public static double wrap(double current, double size) {
+        while (current < 0 || current >= size) {
+            if (current < 0) {
+                current += size;
+            } else if (current >= size) {
+                current -= size;
+            }
+        }
+        return current;
     }
 }
