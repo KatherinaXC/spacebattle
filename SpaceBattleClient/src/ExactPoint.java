@@ -1,4 +1,3 @@
-package spacebattle;
 
 import java.awt.Point;
 
