@@ -9,19 +9,22 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class CenterShip extends BasicSpaceship {
 
+    private int worldWidth;
+    private int worldHeight;
     @Override
-    public RegistrationData registerShip(int i, int i1, int i2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
+        this.worldWidth = worldWidth;
+        this.worldHeight = worldHeight;
+        return new RegistrationData("", new Color(00, 41, 82), numImages);
     }
 
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new IdleCommand(0.1);
     }
 
     @Override
     public void shipDestroyed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
