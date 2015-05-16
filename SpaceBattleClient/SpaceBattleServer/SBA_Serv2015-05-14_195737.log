@@ -1,0 +1,30 @@
+2015-05-14 19:57:37,914|541|INFO|MainThread|SBA_Serv|67|<module>|Starting Space Battle Arena v1.0
+2015-05-14 19:57:37,914|541|INFO|MainThread|SBA_Serv|68|<module>|Logging to SBA_Serv2015-05-14_195737.log Verbose: False
+2015-05-14 19:57:37,917|544|INFO|MainThread|SBA_Serv|78|<module>|Loaded Default Configuration File
+2015-05-14 19:57:37,917|544|INFO|MainThread|SBA_Serv|86|<module>|Loaded Configuration Files: []
+2015-05-14 19:57:37,917|545|INFO|MainThread|SBA_Serv|134|<module>|Running Basic Game
+2015-05-14 19:57:37,921|548|INFO|MainThread|WorldMap|50|__init__|Initialized World of size (800, 600), starting game loop...
+2015-05-14 19:57:37,927|554|INFO|MainThread|Game|148|round_start|Starting Game
+2015-05-14 19:57:37,927|555|INFO|MainThread|SBA_Serv|139|<module>|Starting Game Network Server...
+2015-05-14 19:57:37,946|573|INFO|Dummy-1|WorldMap|246|__THREAD__gameloop|World Adding #116 to Physics Engine <World.WorldEntities.Nebula object at 0x0247DFD0>
+2015-05-14 19:57:37,946|573|INFO|Dummy-1|WorldMap|246|__THREAD__gameloop|World Adding #117 to Physics Engine <World.WorldEntities.Planet object at 0x0247DF70>
+2015-05-14 19:57:37,947|574|INFO|Dummy-1|WorldMap|246|__THREAD__gameloop|World Adding #119 to Physics Engine <World.WorldEntities.BlackHole object at 0x024CB170>
+2015-05-14 19:57:37,947|574|INFO|Dummy-1|WorldMap|246|__THREAD__gameloop|World Adding #120 to Physics Engine <World.WorldEntities.Asteroid object at 0x024CB210>
+2015-05-14 19:57:37,947|574|INFO|Dummy-1|WorldMap|246|__THREAD__gameloop|World Adding #126 to Physics Engine <World.WorldEntities.Asteroid object at 0x024CB050>
+2015-05-14 19:57:38,010|638|INFO|MainThread|MWNL2|130|acceptNewClients|Accepting New Clients
+2015-05-14 19:57:38,012|639|INFO|Dummy-2|MWNL2|297|__THREAD__getClients|Waiting For Clients...
+2015-05-14 19:57:38,012|639|INFO|MainThread|WorldServer|37|__init__|Started Server (10.0.0.19), Waiting for Clients
+2015-05-14 19:57:38,013|640|INFO|MainThread|main|53|startGame|Initiating PyGame...
+2015-05-14 19:57:44,450|7077|INFO|MainThread|main|62|startGame|Starting Sound...
+2015-05-14 19:57:44,772|7399|INFO|MainThread|main|200|startGame|Create Main Surface...
+2015-05-14 20:00:28,032|170660|INFO|MainThread|main|516|startGame|Ending Game
+2015-05-14 20:00:28,033|170661|INFO|MainThread|Game|235|round_over|[Game] Stats: []
+2015-05-14 20:00:28,033|170661|INFO|MainThread|main|520|startGame|Ending World
+2015-05-14 20:00:28,035|170662|INFO|MainThread|main|523|startGame|Closing Pygame...
+2015-05-14 20:00:28,533|171161|INFO|MainThread|SBA_Serv|155|<module>|Server Request Disconnect All
+2015-05-14 20:00:28,536|171163|INFO|MainThread|SBA_Serv|157|<module>|Server exit main
+2015-05-14 20:00:28,536|171163|INFO|Dummy-3|MWNL2|182|__close|Sending Disconnect Message
+2015-05-14 20:00:28,536|171164|INFO|Dummy-3|MWNL2|233|__killThreads|Killing Main Threads...
+2015-05-14 20:00:28,536|171164|INFO|Dummy-3|MWNL2|235|__killThreads|1 Thread(s) Alive
+2015-05-14 20:00:28,563|171190|INFO|Dummy-4|MWNL2|182|__close|Sending Disconnect Message
+2015-05-14 20:00:28,565|171193|INFO|Dummy-4|MWNL2|207|__close|Closing Main Socket
