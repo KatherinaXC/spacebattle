@@ -14,7 +14,7 @@ public class CenterShip extends BasicSpaceship {
 
     //Ship private storage
     private ShipState state = ShipState.START;
-    private Point[] waypoints;
+    protected Point[] waypoints;
     private int current = 0;
 
     //Movement calculation variables (updated on every call to getNextCommand())
@@ -39,10 +39,17 @@ public class CenterShip extends BasicSpaceship {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //Initialize waypoints, specific to a CenterShip
-        this.waypoints = new Point[1];
-        this.waypoints[0] = new Point(this.worldWidth / 2, this.worldHeight / 2);
+        initializePoints();
         //End init
         return new RegistrationData("arachnidsGrip", new Color(00, 41, 82), numImages);
+    }
+
+    /**
+     * Initializes the appropriate waypoints for the CenterShip.
+     */
+    private void initializePoints() {
+        this.waypoints = new Point[1];
+        this.waypoints[0] = new Point(this.worldWidth / 2, this.worldHeight / 2);
     }
 
     @Override
@@ -396,4 +403,5 @@ public class CenterShip extends BasicSpaceship {
         System.out.println("Left 1000:\t" + test.targetDest(p1, 180, 1000));
         System.out.println("Down 1000:\t" + test.targetDest(p1, 270, 1000));
     }
+
 }
