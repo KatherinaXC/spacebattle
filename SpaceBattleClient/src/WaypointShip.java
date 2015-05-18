@@ -29,7 +29,7 @@ public class WaypointShip extends BasicShip {
         this.waypoints[1] = new Point(0 + 100, 0 + 100);
         this.waypoints[2] = new Point(getWorldWidth() - 100, 0 + 100);
         this.waypoints[3] = new Point(0 + 100, getWorldHeight() - 100);
-        this.waypoints[3] = new Point(getWorldWidth() - 100, getWorldHeight() - 100);
+        this.waypoints[4] = new Point(getWorldWidth() - 100, getWorldHeight() - 100);
         this.waypoints[5] = waypoints[0];
     }
 }
