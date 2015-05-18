@@ -288,8 +288,8 @@ public class CenterShip extends BasicSpaceship {
     public Point targetDest(Point current, double angle, double distToGo) {
         double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
         double finalY = current.getY() - distToGo * (Math.sin(Math.toRadians(angle)));
-        finalX = CenterShip.wrap(finalX, this.worldWidth);
-        finalY = CenterShip.wrap(finalY, this.worldHeight);
+        finalX = CenterShip.wrap(finalX, CenterShip.getWorldWidth());
+        finalY = CenterShip.wrap(finalY, CenterShip.getWorldHeight());
         return new Point(finalX, finalY);
     }
 
@@ -323,6 +323,14 @@ public class CenterShip extends BasicSpaceship {
             }
         }
         return current;
+    }
+
+    public static double getWorldWidth() {
+        return CenterShip.worldWidth;
+    }
+
+    public static double getWorldHeight() {
+        return CenterShip.worldHeight;
     }
 
     /**
