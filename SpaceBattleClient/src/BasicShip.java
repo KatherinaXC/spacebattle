@@ -14,22 +14,31 @@ import java.awt.Color;
  */
 public abstract class BasicShip extends BasicSpaceship {
 
-    private static int worldWidth;
-    private static int worldHeight;
+    protected static int worldWidth;
+    protected static int worldHeight;
+    protected static int shipSpeedLimit = 25;
 
     //Ship private storage
-    private ShipState state = ShipState.START;
+    protected ShipState state = ShipState.START;
     protected Point[] waypoints;
-    private int current = 0;
+    protected int current = 0;
 
     //Movement calculation variables (updated on every call to getNextCommand())
-    ObjectStatus shipStatus;
-    Point currentPosition;
-    double currentDirection;
-    double currentSpeed;
-    Point optimalVect;
-    double optimalDirection;
-    double distance;
+    protected ObjectStatus shipStatus;
+    protected Point currentPosition;
+    protected double currentDirection;
+    protected double currentSpeed;
+    protected Point optimalVect;
+    protected double optimalDirection;
+    protected double distance;
+
+    //Movement parameter variables
+    public static final double BRAKE_PERCENT = 0.1;
+    public static final double THRUST_TIME = 0.1;
+    public static final double THRUST_SPEED = 0.1;
+    public static final double IDLE_TIME = 0.1;
+    public static final double ANGLE_BOUNDS = 0.1;
+    public static final double EFFECTIVE_STOP = 0.001;
 
     public BasicShip() {
     }
@@ -53,7 +62,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * Initializes the appropriate waypoints into the array of Points
      * "waypoints".
      */
-    abstract void initializePoints();
+    public abstract void initializePoints();
 
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
@@ -136,8 +145,8 @@ public abstract class BasicShip extends BasicSpaceship {
             this.state = ShipState.BRAKE;
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
-            return new ThrustCommand('B', 0.1, 0.1);
-        } else if (Math.abs(currentDirection - optimalDirection) > 0.1) {
+            return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
+        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -155,10 +164,10 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     public ShipCommand whileCoast() {
-        if (distance > currentSpeed) {
+        if (distance > 2 * currentSpeed) {
             //if the distance remaining isn't too close
-            return new IdleCommand(0.1);
-        } else if (Math.abs(currentDirection - optimalDirection) > 0.1) {
+            return new IdleCommand(BasicShip.IDLE_TIME);
+        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -176,20 +185,21 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     public ShipCommand whileBrake() {
-        if (currentSpeed < 0.001) {
+        if (currentSpeed < BasicShip.EFFECTIVE_STOP) {
             //if i'm there already
             if (atPoint(currentPosition, waypoints[current])) {
                 this.state = ShipState.STOP;
                 return new AllStopCommand();
+            } else {
+                //if i am no longer moving noticeably but not actually there, try again
+                this.state = ShipState.TURN;
             }
-            //if i am no longer moving noticeably but not actually there, try again
-            this.state = ShipState.START;
-        } else if (Math.abs(currentDirection - optimalDirection) > 0.1) {
+        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
             //if i'm off course brake (eventually restart)
-            return new BrakeCommand(0.1);
+            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         } else {
             //if i can keep slowing down, do that
-            return new BrakeCommand(0.1);
+            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         }
         return null;
     }
@@ -207,7 +217,7 @@ public abstract class BasicShip extends BasicSpaceship {
             this.state = ShipState.START;
         } else {
             //if there's no more points, yay!
-            return new IdleCommand(0.1);
+            return new IdleCommand(BasicShip.IDLE_TIME);
         }
         return null;
     }
