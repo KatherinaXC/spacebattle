@@ -13,9 +13,9 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class ShapeShip extends BasicShip {
 
-    public static final double SHAPE_SIDE_LENGTH = 50.;
+    public static final double SHAPE_SIDE_LENGTH = 500;
     public static final int SHAPE_SIDE_COUNT = 10;
-    public static final double SHAPE_CORNER_ANGLE = 90.;
+    public static final double SHAPE_CORNER_ANGLE = 63;
     private double shape_corner_current = ShapeShip.SHAPE_CORNER_ANGLE;
 
     public ShapeShip() {
@@ -46,11 +46,13 @@ public class ShapeShip extends BasicShip {
         //remember to initialize the points
         if (this.state == ShipState.INITIALIZEPOINTS) {
             this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT];
-            this.waypoints[0] = this.currentPosition;
-            for (int i = 1; i < this.waypoints.length; i++) {
-                this.waypoints[i] = this.targetDest(this.waypoints[i - 1], this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
+            int i = 0;
+            do {
+                this.waypoints[i] = this.targetDest(this.currentPosition, this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
                 this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
-            }
+                System.out.println("Point: " + this.waypoints[i]);
+                i++;
+            } while (i < this.waypoints.length);
             System.out.println("Initting points");
             this.state = ShipState.START;
         }
