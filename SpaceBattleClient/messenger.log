@@ -1,2508 +1,480 @@
-Message sent from 97 to 0 - 
-  REGISTER([twinArmageddons, [255, 255, 0], 4])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=173}])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=13}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([STOP])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=-97}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=-174}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=-1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([STOP])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=-148}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([STOP])
-Message sent from 97 to 0 - 
-  SCMD([ROT, {DEG=-93}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([THRST, {DUR=0.5, DIR=B, PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([BRAKE, {PER=0.1}])
-Message sent from 97 to 0 - 
-  SCMD([STOP])
-Message sent from 97 to 0 - 
+Message sent from 8 to 0 - 
+  REGISTER([arachnidsGrip, [0, 64, 128], 4])
+Message sent from 8 to 0 - 
+  SCMD([ROT, {DEG=125}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
+  SCMD([THRST, {DUR=0.1, DIR=B, PER=0.1}])
+Message sent from 8 to 0 - 
   MWNL2_DISCONNECT(null)

@@ -46,7 +46,7 @@ public abstract class BasicShip extends BasicSpaceship {
         //Initialize waypoints, specific to a CenterShip
         initializePoints();
         //End init
-        return new RegistrationData("twinArmageddons", Color.yellow, 4);
+        return new RegistrationData("arachnidsGrip", new Color(0, 64, 128), 4);
     }
 
     /**
@@ -136,7 +136,7 @@ public abstract class BasicShip extends BasicSpaceship {
             this.state = ShipState.BRAKE;
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
-            return new ThrustCommand('B', 0.5, 0.1);
+            return new ThrustCommand('B', 0.1, 0.1);
         } else if (Math.abs(currentDirection - optimalDirection) > 0.1) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
@@ -155,7 +155,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     public ShipCommand whileCoast() {
-        if (distance > currentSpeed / 2) {
+        if (distance > currentSpeed) {
             //if the distance remaining isn't too close
             return new IdleCommand(0.1);
         } else if (Math.abs(currentDirection - optimalDirection) > 0.1) {
@@ -318,14 +318,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return fixed coord param
      */
     public static double wrap(double current, double size) {
-        while (current < 0 || current >= size) {
-            if (current < 0) {
-                current += size;
-            } else if (current >= size) {
-                current -= size;
-            }
-        }
-        return current;
+        return (current + ((int) Math.abs(current / size) + 1) * size) % size;
     }
 
     public double getWorldWidth() {
@@ -413,5 +406,11 @@ public abstract class BasicShip extends BasicSpaceship {
         System.out.println("Up 1000:\t" + test.targetDest(p1, 90, 1000));
         System.out.println("Left 1000:\t" + test.targetDest(p1, 180, 1000));
         System.out.println("Down 1000:\t" + test.targetDest(p1, 270, 1000));
+
+        System.out.println();
+        System.out.println("Wrap Testing (50, 100):\t" + BasicShip.wrap(50, 100));
+        System.out.println("Wrap Testing (150, 100):\t" + BasicShip.wrap(150, 100));
+        System.out.println("Wrap Testing (-50, 100):\t" + BasicShip.wrap(-50, 100));
+        System.out.println("Wrap Testing (-150, 100):\t" + BasicShip.wrap(-150, 100));
     }
 }
