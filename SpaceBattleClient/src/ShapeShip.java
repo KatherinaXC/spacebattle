@@ -51,32 +51,10 @@ public class ShapeShip extends BasicShip {
                 this.waypoints[i] = this.targetDest(this.waypoints[i - 1], this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
                 this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
             }
+            System.out.println("Initting points");
             this.state = ShipState.START;
         }
         return super.getNextCommand(be);
-    }
-
-    /**
-     * Allstops if the ship has reached a point. (We can't have ships flying too
-     * far, can we?)
-     *
-     * @return
-     */
-    @Override
-    public ShipCommand whileBrake() {
-        if (atPoint(currentPosition, waypoints[current])) {
-            this.state = ShipState.STOP;
-            return new AllStopCommand();
-        } else if (this.currentSpeed < ShapeShip.EFFECTIVE_STOP) {
-            this.state = ShipState.TURN;
-        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
-            //if i'm off course brake (eventually restart)
-            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
-        } else {
-            //if i can keep slowing down, do that
-            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
-        }
-        return null;
     }
 
     /**

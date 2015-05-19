@@ -33,12 +33,18 @@ public abstract class BasicShip extends BasicSpaceship {
     protected double distance;
 
     //Movement parameter variables
-    public static final double BRAKE_PERCENT = 0.1;
+    public static final double BRAKE_PERCENT = 0.05;
     public static final double THRUST_TIME = 0.1;
     public static final double THRUST_SPEED = 0.1;
     public static final double IDLE_TIME = 0.1;
     public static final double ANGLE_BOUNDS = 0.1;
     public static final double EFFECTIVE_STOP = 0.001;
+
+    //Random other variables
+    public static final int SHIP_IMAGE_SOVIET = 3;
+    public static final int SHIP_IMAGE_ORB = 4;
+    public static final int SHIP_IMAGE_TARDIS = 5;
+    public static final int SHIP_IMAGE_PACMAN = 6;
 
     public BasicShip() {
     }
@@ -55,7 +61,7 @@ public abstract class BasicShip extends BasicSpaceship {
         //Initialize waypoints, specific to a CenterShip
         initializePoints();
         //End init
-        return new RegistrationData("arachnidsGrip", new Color(0, 64, 128), 4);
+        return new RegistrationData("arachnidsGrip", new Color(0, 64, 128), BasicShip.SHIP_IMAGE_ORB);
     }
 
     /**
@@ -82,21 +88,27 @@ public abstract class BasicShip extends BasicSpaceship {
                 case START:
                     //here for solidarity XD
                     this.state = ShipState.TURN;
+                    System.out.println("Start");
                     break;
                 case TURN:
                     result = whileTurn();
+                    System.out.println("Turn");
                     break;
                 case THRUST:
                     result = whileThrust();
+                    System.out.println("Thrust");
                     break;
                 case COAST:
                     result = whileCoast();
+                    System.out.println("Coast");
                     break;
                 case BRAKE:
                     result = whileBrake();
+                    System.out.println("Brake");
                     break;
                 case STOP:
                     result = whileStop();
+                    System.out.println("Stop");
                     break;
             }
             if (result != null) {
