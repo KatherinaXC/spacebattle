@@ -35,8 +35,8 @@ public class ShapeShip extends BasicShip {
      * Overrides getNextCommand() to account for the initialization of points
      * (which each depend on the previous point's location).
      *
-     * @param be
-     * @return
+     * @param be the environment that the ship is in at the moment
+     * @return ShipCommand
      */
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
@@ -45,6 +45,13 @@ public class ShapeShip extends BasicShip {
         currentPosition = shipStatus.getPosition();
         //remember to initialize the points
         if (this.state == ShipState.INITIALIZEPOINTS) {
+            this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT];
+            this.waypoints[0] = this.currentPosition;
+            for (int i = 1; i < this.waypoints.length; i++) {
+                this.waypoints[i] = this.targetDest(this.waypoints[i - 1], this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
+                this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
+            }
+            this.state = ShipState.START;
         }
         return super.getNextCommand(be);
     }

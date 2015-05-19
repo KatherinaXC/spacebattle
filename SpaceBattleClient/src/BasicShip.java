@@ -74,9 +74,9 @@ public abstract class BasicShip extends BasicSpaceship {
         //catches stateswitches during a case
         while (true) {
             //set up switchaltered (read: waypoint affected) variables
-            optimalVect = this.direction(shipStatus.getPosition(), waypoints[current]);
+            optimalVect = this.direction(shipStatus.getPosition(), this.waypoints[current]);
             optimalDirection = CenterShip.getAngle(optimalVect);
-            distance = this.distance(shipStatus.getPosition(), waypoints[current]);
+            distance = this.distance(shipStatus.getPosition(), this.waypoints[current]);
             ShipCommand result = null;
             switch (this.state) {
                 case START:
@@ -187,7 +187,7 @@ public abstract class BasicShip extends BasicSpaceship {
     public ShipCommand whileBrake() {
         if (currentSpeed < BasicShip.EFFECTIVE_STOP) {
             //if i'm there already
-            if (atPoint(currentPosition, waypoints[current])) {
+            if (atPoint(currentPosition, this.waypoints[current])) {
                 this.state = ShipState.STOP;
                 return new AllStopCommand();
             } else {
@@ -211,7 +211,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return idle command
      */
     public ShipCommand whileStop() {
-        if (waypoints.length > current + 1) {
+        if (this.waypoints.length > current + 1) {
             //if there's more points, increment and proceed
             current++;
             this.state = ShipState.START;
