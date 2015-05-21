@@ -35,15 +35,18 @@ public abstract class BasicShip extends BasicSpaceship {
     public static final double BRAKE_PERCENT = 0.03;
     public static final double THRUST_TIME = 0.1;
     public static final double THRUST_SPEED = 0.1;
-    public static final double IDLE_TIME = 0.1;
+    public static final double IDLE_TIME = 0.01;
     public static final double ANGLE_BOUNDS = 0.1;
     public static final double EFFECTIVE_STOP = 0.001;
+    public static final double POINT_ACCURACY = 7;
 
     //Random other variables
     public static final int SHIP_IMAGE_SOVIET = 3;
     public static final int SHIP_IMAGE_ORB = 4;
     public static final int SHIP_IMAGE_TARDIS = 5;
     public static final int SHIP_IMAGE_PACMAN = 6;
+    public static final Color SHIP_COLOR_COBALT = new Color(0, 64, 128);
+    public static final Color SHIP_COLOR_MINT = new Color(204, 240, 225);
 
     public BasicShip() {
     }
@@ -60,7 +63,7 @@ public abstract class BasicShip extends BasicSpaceship {
         //Initialize waypoints, specific to a CenterShip
         initializePoints();
         //End init
-        return new RegistrationData("arachnidsGrip", new Color(0, 64, 128), BasicShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("arachnidsGrip", BasicShip.SHIP_COLOR_COBALT, BasicShip.SHIP_IMAGE_ORB);
     }
 
     /**
@@ -256,8 +259,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return the two points are the same
      */
     public static boolean atPoint(Point current, Point goal) {
-        int range = 10;
-        return (Math.abs(current.getX() - goal.getX()) < range) && (Math.abs(current.getY() - goal.getY()) < range);
+        return (Math.abs(current.getX() - goal.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(current.getY() - goal.getY()) < BasicShip.POINT_ACCURACY);
     }
 
     /**

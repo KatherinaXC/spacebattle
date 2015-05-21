@@ -14,7 +14,7 @@ import ihs.apcs.spacebattle.commands.*;
 public class ShapeShip extends BasicShip {
 
     public static final double SHAPE_SIDE_LENGTH = 150;
-    public static final int SHAPE_SIDE_COUNT = 5; //Set to 21
+    public static final int SHAPE_SIDE_COUNT = 20;
     public static final double SHAPE_CORNER_ANGLE = 126;
     private double shape_corner_current = ShapeShip.SHAPE_CORNER_ANGLE;
 
@@ -33,14 +33,14 @@ public class ShapeShip extends BasicShip {
     @Override
     public void initializePoints() {
         Point center = new Point(this.worldWidth / 2, this.worldHeight / 2);
-        this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT + 1];
+        this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT + 2];
         int i = 0;
         do {
             this.waypoints[i] = this.targetDest(center, this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
             this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
             i++;
         } while (i < this.waypoints.length - 1);
-        this.waypoints[ShapeShip.SHAPE_SIDE_COUNT] = center;
+        this.waypoints[ShapeShip.SHAPE_SIDE_COUNT + 1] = center;
     }
 
     /**
@@ -52,7 +52,7 @@ public class ShapeShip extends BasicShip {
     @Override
     protected ShipCommand whileStart() {
         this.state = ShipState.TURN;
-        if (current != 0 && current != ShapeShip.SHAPE_SIDE_COUNT) {
+        if (current != 0 && current != ShapeShip.SHAPE_SIDE_COUNT + 1) {
             //don't deploy on the first one or last one so it doesn't look super weird
             return new DeployLaserBeaconCommand();
         }
