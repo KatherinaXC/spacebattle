@@ -9,7 +9,7 @@
  * @author s-zhouj
  */
 public enum ShipState {
-    INITIALIZEPOINTS,
+
     START,
     TURN,
     THRUST,

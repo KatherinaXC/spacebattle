@@ -13,9 +13,9 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class ShapeShip extends BasicShip {
 
-    public static final double SHAPE_SIDE_LENGTH = 500;
-    public static final int SHAPE_SIDE_COUNT = 10;
-    public static final double SHAPE_CORNER_ANGLE = 63;
+    public static final double SHAPE_SIDE_LENGTH = 150;
+    public static final int SHAPE_SIDE_COUNT = 5; //Set to 21
+    public static final double SHAPE_CORNER_ANGLE = 126;
     private double shape_corner_current = ShapeShip.SHAPE_CORNER_ANGLE;
 
     public ShapeShip() {
@@ -26,37 +26,37 @@ public class ShapeShip extends BasicShip {
         super(worldWidth, worldHeight);
     }
 
+    /**
+     * Initializes a series of points that determine the shape which the ship
+     * will fly in/mark.
+     */
     @Override
     public void initializePoints() {
-        this.state = ShipState.INITIALIZEPOINTS;
+        Point center = new Point(this.worldWidth / 2, this.worldHeight / 2);
+        this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT + 1];
+        int i = 0;
+        do {
+            this.waypoints[i] = this.targetDest(center, this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
+            this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
+            i++;
+        } while (i < this.waypoints.length - 1);
+        this.waypoints[ShapeShip.SHAPE_SIDE_COUNT] = center;
     }
 
     /**
-     * Overrides getNextCommand() to account for the initialization of points
-     * (which each depend on the previous point's location).
+     * Overrides the super whileStart() so that the ship drops a laser beacon on
+     * spawn, so that the lines actually connect.
      *
-     * @param be the environment that the ship is in at the moment
-     * @return ShipCommand
+     * @return
      */
     @Override
-    public ShipCommand getNextCommand(BasicEnvironment be) {
-        //set up nonswitchaltered variables
-        shipStatus = be.getShipStatus();
-        currentPosition = shipStatus.getPosition();
-        //remember to initialize the points
-        if (this.state == ShipState.INITIALIZEPOINTS) {
-            this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT];
-            int i = 0;
-            do {
-                this.waypoints[i] = this.targetDest(this.currentPosition, this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
-                this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
-                System.out.println("Point: " + this.waypoints[i]);
-                i++;
-            } while (i < this.waypoints.length);
-            System.out.println("Initting points");
-            this.state = ShipState.START;
+    protected ShipCommand whileStart() {
+        this.state = ShipState.TURN;
+        if (current != 0 && current != ShapeShip.SHAPE_SIDE_COUNT) {
+            //don't deploy on the first one or last one so it doesn't look super weird
+            return new DeployLaserBeaconCommand();
         }
-        return super.getNextCommand(be);
+        return null;
     }
 
     /**
@@ -66,15 +66,16 @@ public class ShapeShip extends BasicShip {
      * @return
      */
     @Override
-    public ShipCommand whileStop() {
+    protected ShipCommand whileStop() {
         if (waypoints.length > current + 1) {
             //if there's more points, increment and proceed
             current++;
             this.state = ShipState.START;
-        } else {
-            //if there's no more points, yay!
-            return new IdleCommand(BasicShip.IDLE_TIME);
         }
-        return new DeployLaserBeaconCommand();
+        if (current > 1) {
+            //if i'm past the first point (adjusted)
+            return new DeployLaserBeaconCommand();
+        }
+        return new IdleCommand(BasicShip.IDLE_TIME);
     }
 }

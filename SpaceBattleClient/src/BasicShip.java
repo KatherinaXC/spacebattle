@@ -14,9 +14,8 @@ import java.awt.Color;
  */
 public abstract class BasicShip extends BasicSpaceship {
 
-    protected static int worldWidth;
-    protected static int worldHeight;
-    protected static int shipSpeedLimit = 25;
+    protected int worldWidth;
+    protected int worldHeight;
 
     //Ship private storage
     protected ShipState state = ShipState.START;
@@ -33,7 +32,7 @@ public abstract class BasicShip extends BasicSpaceship {
     protected double distance;
 
     //Movement parameter variables
-    public static final double BRAKE_PERCENT = 0.05;
+    public static final double BRAKE_PERCENT = 0.03;
     public static final double THRUST_TIME = 0.1;
     public static final double THRUST_SPEED = 0.1;
     public static final double IDLE_TIME = 0.1;
@@ -87,28 +86,22 @@ public abstract class BasicShip extends BasicSpaceship {
             switch (this.state) {
                 case START:
                     //here for solidarity XD
-                    this.state = ShipState.TURN;
-                    System.out.println("Start");
+                    result = whileStart();
                     break;
                 case TURN:
                     result = whileTurn();
-                    System.out.println("Turn");
                     break;
                 case THRUST:
                     result = whileThrust();
-                    System.out.println("Thrust");
                     break;
                 case COAST:
                     result = whileCoast();
-                    System.out.println("Coast");
                     break;
                 case BRAKE:
                     result = whileBrake();
-                    System.out.println("Brake");
                     break;
                 case STOP:
                     result = whileStop();
-                    System.out.println("Stop");
                     break;
             }
             if (result != null) {
@@ -118,13 +111,25 @@ public abstract class BasicShip extends BasicSpaceship {
     }
 
     /**
+     * Determines the appropriate ShipCommand to return in the phase of
+     * starting. If there are no appropriate commands, it returns null and
+     * changes the appropriate state variables to reflect that.
+     *
+     * @return null
+     */
+    protected ShipCommand whileStart() {
+        this.state = ShipState.TURN;
+        return null;
+    }
+
+    /**
      * Determines the appropriate ShipCommand to return in the phase of turning.
      * If there are no appropriate commands, it returns null and changes the
      * appropriate state variables to reflect that.
      *
      * @return movement command
      */
-    public ShipCommand whileTurn() {
+    protected ShipCommand whileTurn() {
         if (Math.abs(currentDirection - (optimalDirection + 360) % 360) < 1) {
             //if i'm in the right direction already, just drive
             this.state = ShipState.THRUST;
@@ -151,12 +156,12 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @return movement command
      */
-    public ShipCommand whileThrust() {
+    protected ShipCommand whileThrust() {
         if (currentSpeed > distance / 2) {
             //if i'm going too fast, stop
             this.state = ShipState.BRAKE;
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
-            //if i can keep getting faster, speed up
+            //if i can keep getting faster\, speed up
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
         } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
             //if i'm off course brake (then restart)
@@ -175,7 +180,7 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @return movement command
      */
-    public ShipCommand whileCoast() {
+    protected ShipCommand whileCoast() {
         if (distance > 2 * currentSpeed) {
             //if the distance remaining isn't too close
             return new IdleCommand(BasicShip.IDLE_TIME);
@@ -196,7 +201,7 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @return movement command
      */
-    public ShipCommand whileBrake() {
+    protected ShipCommand whileBrake() {
         if (currentSpeed < BasicShip.EFFECTIVE_STOP) {
             //if i'm there already
             if (atPoint(currentPosition, this.waypoints[current])) {
@@ -222,7 +227,7 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @return idle command
      */
-    public ShipCommand whileStop() {
+    protected ShipCommand whileStop() {
         if (this.waypoints.length > current + 1) {
             //if there's more points, increment and proceed
             current++;
@@ -435,4 +440,5 @@ public abstract class BasicShip extends BasicSpaceship {
         System.out.println("Wrap Testing (-50, 100):\t" + BasicShip.wrap(-50, 100));
         System.out.println("Wrap Testing (-150, 100):\t" + BasicShip.wrap(-150, 100));
     }
+
 }
