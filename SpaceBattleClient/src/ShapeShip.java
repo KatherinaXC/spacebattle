@@ -16,7 +16,6 @@ public class ShapeShip extends BasicShip {
     public static final double SHAPE_SIDE_LENGTH = 150;
     public static final int SHAPE_SIDE_COUNT = 20;
     public static final double SHAPE_CORNER_ANGLE = 126;
-    private double shape_corner_current = ShapeShip.SHAPE_CORNER_ANGLE;
 
     public ShapeShip() {
         super();
@@ -32,12 +31,13 @@ public class ShapeShip extends BasicShip {
      */
     @Override
     public void initializePoints() {
+        double shapeCornerCurrent = ShapeShip.SHAPE_CORNER_ANGLE;
         Point center = new Point(this.worldWidth / 2, this.worldHeight / 2);
         this.waypoints = new Point[ShapeShip.SHAPE_SIDE_COUNT + 2];
         int i = 0;
         do {
-            this.waypoints[i] = this.targetDest(center, this.shape_corner_current, ShapeShip.SHAPE_SIDE_LENGTH);
-            this.shape_corner_current += ShapeShip.SHAPE_CORNER_ANGLE;
+            this.waypoints[i] = this.targetDest(center, shapeCornerCurrent, ShapeShip.SHAPE_SIDE_LENGTH);
+            shapeCornerCurrent += ShapeShip.SHAPE_CORNER_ANGLE;
             i++;
         } while (i < this.waypoints.length - 1);
         this.waypoints[ShapeShip.SHAPE_SIDE_COUNT + 1] = center;

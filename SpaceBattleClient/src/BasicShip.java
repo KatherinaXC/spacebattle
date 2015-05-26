@@ -3,11 +3,6 @@ import ihs.apcs.spacebattle.*;
 import ihs.apcs.spacebattle.commands.*;
 import java.awt.Color;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author s-zhouj
@@ -79,13 +74,13 @@ public abstract class BasicShip extends BasicSpaceship {
         currentPosition = shipStatus.getPosition();
         currentDirection = shipStatus.getOrientation();
         currentSpeed = shipStatus.getSpeed();
+        ShipCommand result = null;
         //catches stateswitches during a case
-        while (true) {
+        while (result == null) {
             //set up switchaltered (read: waypoint affected) variables
             optimalVect = this.direction(shipStatus.getPosition(), this.waypoints[current]);
             optimalDirection = CenterShip.getAngle(optimalVect);
             distance = this.distance(shipStatus.getPosition(), this.waypoints[current]);
-            ShipCommand result = null;
             switch (this.state) {
                 case START:
                     //here for solidarity XD
@@ -107,10 +102,8 @@ public abstract class BasicShip extends BasicSpaceship {
                     result = whileStop();
                     break;
             }
-            if (result != null) {
-                return result;
-            }
         }
+        return result;
     }
 
     /**
@@ -133,7 +126,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     protected ShipCommand whileTurn() {
-        if (Math.abs(currentDirection - (optimalDirection + 360) % 360) < 1) {
+        if (BasicShip.atAngle(currentDirection, optimalDirection)) {
             //if i'm in the right direction already, just drive
             this.state = ShipState.THRUST;
         } else {
@@ -142,9 +135,9 @@ public abstract class BasicShip extends BasicSpaceship {
             //fix over-180 rotations
             while (Math.abs(rotation) > 180) {
                 if (rotation > 0) {
-                    rotation = 360 - rotation;
+                    rotation = rotation - 360;
                 } else {
-                    rotation = 360 + rotation;
+                    rotation = rotation + 360;
                 }
             }
             return new RotateCommand(rotation);
@@ -166,7 +159,7 @@ public abstract class BasicShip extends BasicSpaceship {
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster\, speed up
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
-        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
+        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -187,7 +180,7 @@ public abstract class BasicShip extends BasicSpaceship {
         if (distance > 2 * currentSpeed) {
             //if the distance remaining isn't too close
             return new IdleCommand(BasicShip.IDLE_TIME);
-        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
+        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -214,7 +207,7 @@ public abstract class BasicShip extends BasicSpaceship {
                 //if i am no longer moving noticeably but not actually there, try again
                 this.state = ShipState.TURN;
             }
-        } else if (Math.abs(currentDirection - optimalDirection) > BasicShip.ANGLE_BOUNDS) {
+        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (eventually restart)
             return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         } else {
@@ -260,6 +253,18 @@ public abstract class BasicShip extends BasicSpaceship {
      */
     public static boolean atPoint(Point current, Point goal) {
         return (Math.abs(current.getX() - goal.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(current.getY() - goal.getY()) < BasicShip.POINT_ACCURACY);
+    }
+
+    /**
+     * Returns if the two angles are effectively the same. (Double calculation
+     * logic.)
+     *
+     * @param current
+     * @param optimal
+     * @return the two points are the same
+     */
+    public static boolean atAngle(double current, double optimal) {
+        return Math.abs(current - (optimal + 360) % 360) < BasicShip.ANGLE_BOUNDS;
     }
 
     /**

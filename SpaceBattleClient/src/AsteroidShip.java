@@ -1,8 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+import ihs.apcs.spacebattle.*;
+import ihs.apcs.spacebattle.commands.*;
 
 /**
  *
@@ -12,7 +10,45 @@ public class AsteroidShip extends BasicShip {
 
     @Override
     public void initializePoints() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //We have no baubles to speak of.
+        this.waypoints = new Point[0];
+    }
+
+    @Override
+    public ShipCommand getNextCommand(BasicEnvironment be) {
+        //set up nonswitchaltered variables
+        shipStatus = be.getShipStatus();
+        currentPosition = shipStatus.getPosition();
+        currentDirection = shipStatus.getOrientation();
+        currentSpeed = shipStatus.getSpeed();
+        ShipCommand result = null;
+        //catches stateswitches during a case
+        while (result == null) {
+            //set up switchaltered (read: radar affected) variables
+            RadarResults radar = be.getRadar();
+            switch (this.state) {
+                case START:
+                    //here for solidarity XD
+                    result = whileStart();
+                    break;
+                case TURN:
+                    result = whileTurn();
+                    break;
+                case THRUST:
+                    result = whileThrust();
+                    break;
+                case COAST:
+                    result = whileCoast();
+                    break;
+                case BRAKE:
+                    result = whileBrake();
+                    break;
+                case STOP:
+                    result = whileStop();
+                    break;
+            }
+        }
+        return result;
     }
 
 }
