@@ -127,7 +127,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     protected ShipCommand whileTurn() {
-        if (BasicShip.sameAngle(currentDirection, optimalDirection)) {
+        if (BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm in the right direction already, just drive
             this.state = ShipState.THRUST;
         } else {
@@ -160,7 +160,7 @@ public abstract class BasicShip extends BasicSpaceship {
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster\, speed up
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
-        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -181,7 +181,7 @@ public abstract class BasicShip extends BasicSpaceship {
         if (distance > 2 * currentSpeed) {
             //if the distance remaining isn't too close
             return new IdleCommand(BasicShip.IDLE_TIME);
-        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -208,7 +208,7 @@ public abstract class BasicShip extends BasicSpaceship {
                 //if i am no longer moving noticeably but not actually there, try again
                 this.state = ShipState.TURN;
             }
-        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (eventually restart)
             return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         } else {
@@ -264,8 +264,8 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param optimal
      * @return the two points are the same
      */
-    public static boolean sameAngle(double current, double optimal) {
-        return Math.abs(current - (optimal + 360) % 360) < BasicShip.ANGLE_BOUNDS;
+    public static boolean sameAngle(double current, double optimal, double anglebounds) {
+        return Math.abs(current - (optimal + 360) % 360) < anglebounds;
     }
 
     /**
