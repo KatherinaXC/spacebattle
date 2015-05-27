@@ -262,6 +262,7 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @param current
      * @param optimal
+     * @param anglebounds
      * @return the two points are the same
      */
     public static boolean sameAngle(double current, double optimal, double anglebounds) {

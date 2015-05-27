@@ -11,15 +11,15 @@ public class AsteroidShip extends BasicShip {
     protected RadarResults radarGeneral = null;
     protected ObjectStatus radarSpecific = null;
     protected Point semiTarget = null;
-    protected boolean radarTaken = false;
     protected ShipState state = ShipState.RADAR;
 
     protected double lastRadarLevel;
 
     public static final double MAX_DRIFT_SPEED = 20;
     public static final double SHOOT_RANGE = 500;
-    public static final double SHOOT_ENERGY_THRESHOLD = 50;
-    public static final double ANGLE_BOUNDS = 10;
+    public static final double SHOOT_ENERGY_THRESHOLD = 20;
+    public static final double AIM_SPEED_FACTOR = 1.5;
+    public static final double ANGLE_BOUNDS = 5;
 
     @Override
     public void initializePoints() {
@@ -56,8 +56,8 @@ public class AsteroidShip extends BasicShip {
         while (result == null) {
             //only use these if we have passed our radar stage
             if (radarSpecific != null) {
-                //TODO make this more accurate later -.-
-                this.semiTarget = this.targetDest(radarSpecific.getPosition(), radarSpecific.getOrientation(), radarSpecific.getSpeed());
+                this.semiTarget = this.targetDest(radarSpecific.getPosition(), radarSpecific.getOrientation(),
+                        -radarSpecific.getSpeed() * AsteroidShip.AIM_SPEED_FACTOR);
                 this.optimalVect = this.direction(shipStatus.getPosition(), this.semiTarget);
                 this.optimalDirection = AsteroidShip.getAngle(optimalVect);
                 this.distance = this.distance(shipStatus.getPosition(), this.semiTarget);
@@ -91,20 +91,14 @@ public class AsteroidShip extends BasicShip {
     }
 
     protected ShipCommand whileRadar() {
-        if (this.radarTaken == true && this.currentSpeed < AsteroidShip.MAX_DRIFT_SPEED) {
-            //better to get a changing radar range to wipe the screen faster, don't go too fast
-            return new ThrustCommand('B', AsteroidShip.THRUST_TIME, AsteroidShip.THRUST_SPEED);
-        }
-        if (this.radarGeneral == null || this.radarGeneral.size() == 0 || this.lastRadarLevel == 3) {
+        int selectedID = closestID(currentPosition, currentDirection, currentSpeed, "Asteroid");
+        if (selectedID == -1 || this.radarGeneral == null || this.radarGeneral.size() == 0 || this.lastRadarLevel == 3) {
             //if i have no useful overall radar so far, or just took a specific check
             System.out.println("Checking RadarGeneral");
-            this.radarTaken = true;
             return new RadarCommand(4);
         } else {
             //if I have general radar but no specific target
             System.out.println("Checking RadarSpecific");
-            this.radarTaken = true;
-            int selectedID = closestID(currentPosition, currentDirection, currentSpeed);
             return new RadarCommand(3, selectedID);
         }
     }
@@ -118,15 +112,16 @@ public class AsteroidShip extends BasicShip {
     @Override
     protected ShipCommand whileTurn() {
         System.out.println(optimalDirection - currentDirection);
-        if (!AsteroidShip.sameAngle(currentDirection, optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
-            //if i'm facing the wrong way rotate
+        if (!AsteroidShip.sameAngle(currentDirection, optimalDirection, AsteroidShip.ANGLE_BOUNDS)
+                && !AsteroidShip.sameAngle(currentDirection + 180, optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+            //if i'm facing the wrong way (forwards or backwards) rotate
             double rotation = optimalDirection - currentDirection;
-            //fix over-180 rotations
-            while (Math.abs(rotation) > 180) {
+            //fix over-90 rotations (gotta use back AND front!)
+            while (Math.abs(rotation) > 90) {
                 if (rotation > 0) {
-                    rotation = rotation - 360;
+                    rotation = rotation - 180;
                 } else {
-                    rotation = rotation + 360;
+                    rotation = rotation + 180;
                 }
             }
             if (distance(this.currentPosition, this.semiTarget) > AsteroidShip.SHOOT_RANGE) {
@@ -145,7 +140,11 @@ public class AsteroidShip extends BasicShip {
     protected ShipCommand whileShoot() {
         this.state = ShipState.STOP;
         if (this.currentEnergy > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
-            return new FireTorpedoCommand('F');
+            if (AsteroidShip.sameAngle(this.currentDirection, this.optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+                return new FireTorpedoCommand('F');
+            } else {
+                return new FireTorpedoCommand('B');
+            }
         }
         return null;
     }
@@ -153,20 +152,24 @@ public class AsteroidShip extends BasicShip {
     @Override
     protected ShipCommand whileStop() {
         this.state = ShipState.RADAR;
-        this.radarTaken = false;
         this.radarSpecific = null;
         return null;
     }
 
-    public int closestID(Point current, double angle, double speed) {
+    public int closestID(Point current, double angle, double speed, String type) {
+        if (this.radarGeneral == null) {
+            return -1;
+        }
         Point mydestination = targetDest(current, angle, speed);
-        ObjectStatus closest = this.radarGeneral.get(0);
+        double min = Double.MAX_VALUE;
+        int id = -1;
         for (ObjectStatus testing : this.radarGeneral) {
-            if (distance(testing.getPosition(), mydestination) < distance(closest.getPosition(), mydestination)) {
-                closest = testing;
+            if (distance(testing.getPosition(), mydestination) < min && testing.getType().equals(type)) {
+                min = distance(testing.getPosition(), mydestination);
+                id = testing.getId();
             }
         }
-        return closest.getId();
+        return id;
     }
 
     public static boolean containsObjectID(RadarResults list, int id) {
