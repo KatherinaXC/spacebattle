@@ -22,6 +22,7 @@ public abstract class BasicShip extends BasicSpaceship {
     protected Point currentPosition;
     protected double currentDirection;
     protected double currentSpeed;
+    protected double currentEnergy;
     protected Point optimalVect;
     protected double optimalDirection;
     protected double distance;
@@ -55,7 +56,7 @@ public abstract class BasicShip extends BasicSpaceship {
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
-        //Initialize waypoints, specific to a CenterShip
+        //Initialize waypoints
         initializePoints();
         //End init
         return new RegistrationData("arachnidsGrip", BasicShip.SHIP_COLOR_COBALT, BasicShip.SHIP_IMAGE_ORB);
@@ -79,7 +80,7 @@ public abstract class BasicShip extends BasicSpaceship {
         while (result == null) {
             //set up switchaltered (read: waypoint affected) variables
             optimalVect = this.direction(shipStatus.getPosition(), this.waypoints[current]);
-            optimalDirection = CenterShip.getAngle(optimalVect);
+            optimalDirection = BasicShip.getAngle(optimalVect);
             distance = this.distance(shipStatus.getPosition(), this.waypoints[current]);
             switch (this.state) {
                 case START:
@@ -126,7 +127,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @return movement command
      */
     protected ShipCommand whileTurn() {
-        if (BasicShip.atAngle(currentDirection, optimalDirection)) {
+        if (BasicShip.sameAngle(currentDirection, optimalDirection)) {
             //if i'm in the right direction already, just drive
             this.state = ShipState.THRUST;
         } else {
@@ -159,7 +160,7 @@ public abstract class BasicShip extends BasicSpaceship {
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster\, speed up
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
-        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -180,7 +181,7 @@ public abstract class BasicShip extends BasicSpaceship {
         if (distance > 2 * currentSpeed) {
             //if the distance remaining isn't too close
             return new IdleCommand(BasicShip.IDLE_TIME);
-        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -200,14 +201,14 @@ public abstract class BasicShip extends BasicSpaceship {
     protected ShipCommand whileBrake() {
         if (currentSpeed < BasicShip.EFFECTIVE_STOP) {
             //if i'm there already
-            if (atPoint(currentPosition, this.waypoints[current])) {
+            if (samePoint(currentPosition, this.waypoints[current])) {
                 this.state = ShipState.STOP;
                 return new AllStopCommand();
             } else {
                 //if i am no longer moving noticeably but not actually there, try again
                 this.state = ShipState.TURN;
             }
-        } else if (!BasicShip.atAngle(currentDirection, optimalDirection)) {
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection)) {
             //if i'm off course brake (eventually restart)
             return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         } else {
@@ -251,7 +252,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param goal
      * @return the two points are the same
      */
-    public static boolean atPoint(Point current, Point goal) {
+    public static boolean samePoint(Point current, Point goal) {
         return (Math.abs(current.getX() - goal.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(current.getY() - goal.getY()) < BasicShip.POINT_ACCURACY);
     }
 
@@ -263,7 +264,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param optimal
      * @return the two points are the same
      */
-    public static boolean atAngle(double current, double optimal) {
+    public static boolean sameAngle(double current, double optimal) {
         return Math.abs(current - (optimal + 360) % 360) < BasicShip.ANGLE_BOUNDS;
     }
 
@@ -325,8 +326,8 @@ public abstract class BasicShip extends BasicSpaceship {
     public Point targetDest(Point current, double angle, double distToGo) {
         double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
         double finalY = current.getY() - distToGo * (Math.sin(Math.toRadians(angle)));
-        finalX = CenterShip.wrap(finalX, getWorldWidth());
-        finalY = CenterShip.wrap(finalY, getWorldHeight());
+        finalX = BasicShip.wrap(finalX, getWorldWidth());
+        finalY = BasicShip.wrap(finalY, getWorldHeight());
         return new Point(finalX, finalY);
     }
 
