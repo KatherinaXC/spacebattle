@@ -87,14 +87,12 @@ public class AsteroidShip extends BasicShip {
     }
 
     protected ShipCommand whileRadar() {
-        this.state = ShipState.START;
-        if (this.radarGeneral == null || this.radarGeneral.size() == 0) {
-            //if i have no useful overall radar so far, or just took a specific check+have energy leftover
+        if (this.radarGeneral == null || this.radarGeneral.size() == 0 || this.lastRadarLevel == 3) {
+            //if i have no useful overall radar so far, or just took a specific check
             System.out.println("Checking RadarGeneral");
             return new RadarCommand(4);
         } else {
-            //if I have general radar but no specific target, or have shot down the last target
-            //pick the optimal target based on closeness + velocity
+            //if I have general radar but no specific target
             System.out.println("Checking RadarSpecific");
             int selectedID = closestID(currentPosition, currentDirection, currentSpeed);
             return new RadarCommand(3, selectedID);
