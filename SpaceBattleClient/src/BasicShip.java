@@ -180,7 +180,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param numImages The number representing the appearance of the ship
      * @param worldWidth The width of the world
      * @param worldHeight The height of the world
-     * @return
+     * @return RegistrationData for the world to handle
      */
     @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
@@ -384,25 +384,25 @@ public abstract class BasicShip extends BasicSpaceship {
      * Returns if the two points are effectively the same. (Double calculation
      * logic.)
      *
-     * @param current
-     * @param goal
+     * @param p1 first point to match
+     * @param p2 second point to match
      * @return if the two points are the same
      */
-    public static boolean samePoint(Point current, Point goal) {
-        return (Math.abs(current.getX() - goal.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(current.getY() - goal.getY()) < BasicShip.POINT_ACCURACY);
+    public static boolean samePoint(Point p1, Point p2) {
+        return (Math.abs(p1.getX() - p2.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(p1.getY() - p2.getY()) < BasicShip.POINT_ACCURACY);
     }
 
     /**
      * Returns if the two angles are effectively the same. (Double calculation
      * logic.)
      *
-     * @param current
-     * @param optimal
-     * @param anglebounds
+     * @param a1 the first angle to match
+     * @param a2 the second angle to match
+     * @param anglebounds the accuracy to match to
      * @return if the two angles are the same
      */
-    public static boolean sameAngle(double current, double optimal, double anglebounds) {
-        return Math.abs(current - (optimal + 360) % 360) < anglebounds;
+    public static boolean sameAngle(double a1, double a2, double anglebounds) {
+        return Math.abs(a1 - (a2 + 360) % 360) < anglebounds;
     }
 
     /**
@@ -458,7 +458,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param current the current location
      * @param angle the angle that the object is facing (Cartesian plane)
      * @param distToGo the distance to travel forward
-     * @return
+     * @return Point from the current at given angle with given distance away
      */
     public Point targetDest(Point current, double angle, double distToGo) {
         double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
@@ -471,8 +471,8 @@ public abstract class BasicShip extends BasicSpaceship {
     /**
      * Returns the degree of the Point (which represents a vector).
      *
-     * @param vector
-     * @return degree of vector
+     * @param vector a vector
+     * @return degree of given vector
      */
     public static double getAngle(Point vector) {
         double degree = Math.toDegrees(Math.atan(-vector.getY() / vector.getX()));
@@ -485,8 +485,8 @@ public abstract class BasicShip extends BasicSpaceship {
     /**
      * Takes a double and wraps it to fit into the given size parameter.
      *
-     * @param current
-     * @param size
+     * @param current the current double parameter
+     * @param size the maximum associated world size parameter to wrap to
      * @return fixed coord param
      */
     public static double wrap(double current, double size) {
