@@ -32,6 +32,14 @@ public class ShapeShip extends BasicShip {
     public static final double SHAPE_CORNER_ANGLE = 126;
 
     /**
+     * This is a stupid useless constructor that exists solely for the purpose
+     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     */
+    public ShapeShip() {
+        super();
+    }
+
+    /**
      * Constructor for a ShapeShip, setting up the parameters worldWidth and
      * worldHeight.
      *

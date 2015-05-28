@@ -163,6 +163,13 @@ public abstract class BasicShip extends BasicSpaceship {
     public static final Color SHIP_COLOR_MINT = new Color(204, 240, 225);
 
     /**
+     * This is a stupid useless constructor that exists solely for the purpose
+     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     */
+    public BasicShip() {
+    }
+
+    /**
      * Constructor for a BasicShip, setting up the parameters worldWidth and
      * worldHeight.
      *

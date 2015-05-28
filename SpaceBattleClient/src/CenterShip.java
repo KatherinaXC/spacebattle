@@ -10,6 +10,14 @@ import ihs.apcs.spacebattle.commands.*;
 public class CenterShip extends BasicShip {
 
     /**
+     * This is a stupid useless constructor that exists solely for the purpose
+     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     */
+    public CenterShip() {
+        super();
+    }
+
+    /**
      * Constructor for a CenterShip, setting up the parameters worldWidth and
      * worldHeight.
      *

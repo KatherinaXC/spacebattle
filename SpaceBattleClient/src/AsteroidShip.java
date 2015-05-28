@@ -62,6 +62,14 @@ public class AsteroidShip extends BasicShip {
     public static final double ANGLE_BOUNDS = 5;
 
     /**
+     * This is a stupid useless constructor that exists solely for the purpose
+     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     */
+    public AsteroidShip() {
+        super();
+    }
+
+    /**
      * Constructor for an AsteroidShip, setting up the parameters worldWidth and
      * worldHeight.
      *

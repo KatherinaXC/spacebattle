@@ -8,6 +8,14 @@ import ihs.apcs.spacebattle.Point;
 public class WaypointShip extends BasicShip {
 
     /**
+     * This is a stupid useless constructor that exists solely for the purpose
+     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     */
+    public WaypointShip() {
+        super();
+    }
+
+    /**
      * Constructor for a WaypointShip, setting up the parameters worldWidth and
      * worldHeight.
      *
