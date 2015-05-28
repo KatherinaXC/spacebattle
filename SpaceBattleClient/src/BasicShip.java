@@ -189,7 +189,7 @@ public abstract class BasicShip extends BasicSpaceship {
         //Initialize waypoints
         initializePoints();
         //End init
-        return new RegistrationData("arachnidsGrip", BasicShip.SHIP_COLOR_COBALT, BasicShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("agar.io", BasicShip.SHIP_COLOR_MINT, BasicShip.SHIP_IMAGE_ORB);
     }
 
     /**
