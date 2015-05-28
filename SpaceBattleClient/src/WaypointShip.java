@@ -1,21 +1,19 @@
 
 import ihs.apcs.spacebattle.Point;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author s-zhouj
  */
 public class WaypointShip extends BasicShip {
 
-    public WaypointShip() {
-        super();
-    }
-
+    /**
+     * Constructor for a WaypointShip, setting up the parameters worldWidth and
+     * worldHeight.
+     *
+     * @param worldWidth the width of the world
+     * @param worldHeight the height of the world
+     */
     public WaypointShip(int worldWidth, int worldHeight) {
         super(worldWidth, worldHeight);
     }

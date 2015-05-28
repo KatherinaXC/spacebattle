@@ -13,14 +13,31 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class ShapeShip extends BasicShip {
 
+    /**
+     * The length of each side in the spirograph-looking shape that the ship
+     * will draw.
+     */
     public static final double SHAPE_SIDE_LENGTH = 150;
+
+    /**
+     * The number of sides to the spirograph-looking shape that the ship will
+     * draw.
+     */
     public static final int SHAPE_SIDE_COUNT = 20;
+
+    /**
+     * 180 - the angle between each side in the spirograph-looking shape that
+     * the ship will draw.
+     */
     public static final double SHAPE_CORNER_ANGLE = 126;
 
-    public ShapeShip() {
-        super();
-    }
-
+    /**
+     * Constructor for a ShapeShip, setting up the parameters worldWidth and
+     * worldHeight.
+     *
+     * @param worldWidth the width of the world
+     * @param worldHeight the height of the world
+     */
     public ShapeShip(int worldWidth, int worldHeight) {
         super(worldWidth, worldHeight);
     }
@@ -47,7 +64,7 @@ public class ShapeShip extends BasicShip {
      * Overrides the super whileStart() so that the ship drops a laser beacon on
      * spawn, so that the lines actually connect.
      *
-     * @return
+     * @return laser beacon command or null
      */
     @Override
     protected ShipCommand whileStart() {
@@ -63,7 +80,7 @@ public class ShapeShip extends BasicShip {
      * Overrides the super whileStop() so that the ship actually drops a laser
      * beacon.
      *
-     * @return
+     * @return laser beacon command or idle command
      */
     @Override
     protected ShipCommand whileStop() {

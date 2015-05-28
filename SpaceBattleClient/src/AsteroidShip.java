@@ -8,18 +8,69 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class AsteroidShip extends BasicShip {
 
+    /**
+     * The saved results of the last level-4 radar scan (containing all objects'
+     * positions and types).
+     */
     protected RadarResults radarGeneral = null;
+
+    /**
+     * The saved results of the last level-3 radar scan (containing all of the
+     * target object's information)
+     */
     protected ObjectStatus radarSpecific = null;
+
+    /**
+     * The position that the target object will arrive at in a short period of
+     * time.
+     */
     protected Point semiTarget = null;
+
+    /**
+     * (Overridden) The state variable used for the state machine, starting at
+     * ShipState.RADAR.
+     */
     protected ShipState state = ShipState.RADAR;
 
+    /**
+     * The last radar scan's level, saved for trans-method use.
+     */
     protected double lastRadarLevel;
 
-    public static final double MAX_DRIFT_SPEED = 20;
+    /**
+     * The furthest range from which the ship is willing to pursue shooting a
+     * target.
+     */
     public static final double SHOOT_RANGE = 500;
-    public static final double SHOOT_ENERGY_THRESHOLD = 20;
+
+    /**
+     * The minimum energy available where the ship is willing to spend energy to
+     * shoot. (We need energy for movement too!)
+     */
+    public static final double SHOOT_ENERGY_THRESHOLD = 10;
+
+    /**
+     * The factor by which the speed of a target object is multiplied to
+     * forecast its position.
+     */
     public static final double AIM_SPEED_FACTOR = 1.5;
+
+    /**
+     * The margin of error that the ship will tolerate when calculating angles
+     * of rotation and shooting.
+     */
     public static final double ANGLE_BOUNDS = 5;
+
+    /**
+     * Constructor for an AsteroidShip, setting up the parameters worldWidth and
+     * worldHeight.
+     *
+     * @param worldWidth the width of the world
+     * @param worldHeight the height of the world
+     */
+    public AsteroidShip(int worldWidth, int worldHeight) {
+        super(worldWidth, worldHeight);
+    }
 
     @Override
     public void initializePoints() {
@@ -27,6 +78,13 @@ public class AsteroidShip extends BasicShip {
         this.waypoints = new Point[0];
     }
 
+    /**
+     * (Override) Returns the command that the ship decides on taking, while
+     * saving previously gathered radar data.
+     *
+     * @param be the current game environment
+     * @return next action
+     */
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
         //set up nonswitchaltered variables
@@ -90,6 +148,13 @@ public class AsteroidShip extends BasicShip {
         return result;
     }
 
+    /**
+     * Determines the appropriate ShipCommand to return in the phase of
+     * obtaining radar. If there are no appropriate commands, it returns null
+     * and changes the appropriate state variables to reflect that.
+     *
+     * @return radar command level 3 or 4
+     */
     protected ShipCommand whileRadar() {
         int selectedID = closestID(currentPosition, currentDirection, currentSpeed, "Asteroid");
         if (selectedID == -1 || this.radarGeneral == null || this.radarGeneral.size() == 0 || this.lastRadarLevel == 3) {
@@ -103,12 +168,13 @@ public class AsteroidShip extends BasicShip {
         }
     }
 
-    @Override
-    protected ShipCommand whileStart() {
-        this.state = ShipState.TURN;
-        return null;
-    }
-
+    /**
+     * Determines the appropriate ShipCommand to return in the phase of turning.
+     * If there are no appropriate commands, it returns null and changes the
+     * appropriate state variables to reflect that.
+     *
+     * @return rotation command or null
+     */
     @Override
     protected ShipCommand whileTurn() {
         System.out.println(optimalDirection - currentDirection);
@@ -137,6 +203,13 @@ public class AsteroidShip extends BasicShip {
         return null;
     }
 
+    /**
+     * Determines the appropriate ShipCommand to return in the phase of
+     * shooting. If there are no appropriate commands, it returns null and
+     * changes the appropriate state variables to reflect that.
+     *
+     * @return torpedo command or null
+     */
     protected ShipCommand whileShoot() {
         this.state = ShipState.STOP;
         if (this.currentEnergy > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
@@ -149,6 +222,13 @@ public class AsteroidShip extends BasicShip {
         return null;
     }
 
+    /**
+     * Determines the appropriate ShipCommand to return in the phase of
+     * stopping. If there are no appropriate commands, it returns null and
+     * changes the appropriate state variables to reflect that.
+     *
+     * @return null
+     */
     @Override
     protected ShipCommand whileStop() {
         this.state = ShipState.RADAR;
@@ -156,6 +236,16 @@ public class AsteroidShip extends BasicShip {
         return null;
     }
 
+    /**
+     * Returns the ID of the closest object to the position indicated by the
+     * given parameters in radarGeneral that matches the given object type.
+     *
+     * @param current current position of center object
+     * @param angle current angle of center object
+     * @param speed current speed of center object
+     * @param type the type of object required
+     * @return -1 for no possibility or ID of closest matched type object
+     */
     public int closestID(Point current, double angle, double speed, String type) {
         if (this.radarGeneral == null) {
             return -1;
@@ -172,6 +262,14 @@ public class AsteroidShip extends BasicShip {
         return id;
     }
 
+    /**
+     * Returns if the given list of RadarResults contains any ObjectStatus
+     * matching the given ID.
+     *
+     * @param list RadarResults... from radar
+     * @param id ID to look for
+     * @return if the ID is included in the list
+     */
     public static boolean containsObjectID(RadarResults list, int id) {
         for (ObjectStatus test : list) {
             if (test.getId() == id) {

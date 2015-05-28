@@ -9,10 +9,13 @@ import ihs.apcs.spacebattle.commands.*;
  */
 public class CenterShip extends BasicShip {
 
-    public CenterShip() {
-        super();
-    }
-
+    /**
+     * Constructor for a CenterShip, setting up the parameters worldWidth and
+     * worldHeight.
+     *
+     * @param worldWidth the width of the world
+     * @param worldHeight the height of the world
+     */
     public CenterShip(int worldWidth, int worldHeight) {
         super(worldWidth, worldHeight);
     }

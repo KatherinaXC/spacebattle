@@ -9,49 +9,179 @@ import java.awt.Color;
  */
 public abstract class BasicShip extends BasicSpaceship {
 
+    /**
+     * The width of the world (X parameter), as passed to BasicShip by the
+     * constructor.
+     */
     protected int worldWidth;
+
+    /**
+     * The height of the world (Y parameter), as passed to BasicShip by the
+     * constructor.
+     */
     protected int worldHeight;
 
     //Ship private storage
+    /**
+     * The state variable used for the state machine.
+     */
     protected ShipState state = ShipState.START;
+
+    /**
+     * An array of Points representing the places where the ship must fly to and
+     * stop at, in exact order.
+     */
     protected Point[] waypoints;
+
+    /**
+     * The number point that the ship is currently working on.
+     */
     protected int current = 0;
 
     //Movement calculation variables (updated on every call to getNextCommand())
+    /**
+     * The ObjectStatus representing the ship. Updated on each call to
+     * getNextCommand().
+     */
     protected ObjectStatus shipStatus;
+
+    /**
+     * The current position of the ship. Updated on each call to
+     * getNextCommand().
+     */
     protected Point currentPosition;
+
+    /**
+     * The current direction (in degrees) that the ship is facing. Updated on
+     * each call to getNextCommand().
+     */
     protected double currentDirection;
+
+    /**
+     * The current speed of the ship. Updated on each call to getNextCommand().
+     */
     protected double currentSpeed;
+
+    /**
+     * The current energy level/percentage of the ship. Updated on each call to
+     * getNextCommand().
+     */
     protected double currentEnergy;
+
+    /**
+     * A temporary cross-method Point that represents the vector from the
+     * current position to the target point, accounting for wrapping. Updated on
+     * each call to getNextCommand().
+     */
     protected Point optimalVect;
+
+    /**
+     * The direction that the optimal vector recommends. Updated on each call to
+     * getNextCommand().
+     */
     protected double optimalDirection;
+
+    /**
+     * The distance that the ship would need to fly to get to the destination
+     * point. Updated on each call to getNextCommand().
+     */
     protected double distance;
 
     //Movement parameter variables
+    /**
+     * The percent of current speed that the ship should retain on braking.
+     */
     public static final double BRAKE_PERCENT = 0.03;
+
+    /**
+     * The duration that the ship should power its thrusters for.
+     */
     public static final double THRUST_TIME = 0.1;
+
+    /**
+     * The percent of current speed that the ship should accelerate on
+     * thrusting.
+     */
     public static final double THRUST_SPEED = 0.1;
+
+    /**
+     * The amount of time that the ship will spend doing nothing on each idle
+     * command.
+     */
     public static final double IDLE_TIME = 0.01;
+
+    /**
+     * The margin of error that the ship will tolerate when calculating angles
+     * of rotation.
+     */
     public static final double ANGLE_BOUNDS = 0.1;
+
+    /**
+     * The fastest speed that the ship will accept as 'stopping', since there is
+     * no actual way to stop completely outside of an AllStopCommand.
+     */
     public static final double EFFECTIVE_STOP = 0.001;
+
+    /**
+     * The radius which the ship must stop within on each given waypoint.
+     */
     public static final double POINT_ACCURACY = 7;
 
     //Random other variables
+    /**
+     * The registration number that will display a red ship with the hammer and
+     * sickle on it.
+     */
     public static final int SHIP_IMAGE_SOVIET = 3;
+
+    /**
+     * The registration number that will display a blue, "eggy loking thign"
+     * [reference] ship with golden trim and nebulated interior.
+     */
     public static final int SHIP_IMAGE_ORB = 4;
+
+    /**
+     * The registration number that will display the TARDIS as a ship.
+     */
     public static final int SHIP_IMAGE_TARDIS = 5;
+
+    /**
+     * The registration number that will display Pac-Man as a ship.
+     */
     public static final int SHIP_IMAGE_PACMAN = 6;
+
+    /**
+     * Color for text resembling that of Vriska Serket. It is also impossible to
+     * read on the projector screen during class due to having such low
+     * concentration of each color.
+     */
     public static final Color SHIP_COLOR_COBALT = new Color(0, 64, 128);
+
+    /**
+     * Color for light, white-mint text.
+     */
     public static final Color SHIP_COLOR_MINT = new Color(204, 240, 225);
 
-    public BasicShip() {
-    }
-
+    /**
+     * Constructor for a BasicShip, setting up the parameters worldWidth and
+     * worldHeight.
+     *
+     * @param worldWidth the width of the world that the ship will enter
+     * @param worldHeight the height of the world that the ship will enter
+     */
     public BasicShip(int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
     }
 
+    /**
+     * Registers the ship with the serverside. Called upon entry.
+     *
+     * @param numImages The number representing the appearance of the ship
+     * @param worldWidth The width of the world
+     * @param worldHeight The height of the world
+     * @return
+     */
     @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
@@ -68,6 +198,12 @@ public abstract class BasicShip extends BasicSpaceship {
      */
     public abstract void initializePoints();
 
+    /**
+     * Returns the command that the ship decides on taking.
+     *
+     * @param be the current game environment
+     * @return next action
+     */
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
         //set up nonswitchaltered variables
@@ -112,7 +248,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * starting. If there are no appropriate commands, it returns null and
      * changes the appropriate state variables to reflect that.
      *
-     * @return null
+     * @return null (the start state is basically skipped here)
      */
     protected ShipCommand whileStart() {
         this.state = ShipState.TURN;
@@ -124,7 +260,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * If there are no appropriate commands, it returns null and changes the
      * appropriate state variables to reflect that.
      *
-     * @return movement command
+     * @return turn command or null
      */
     protected ShipCommand whileTurn() {
         if (BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
@@ -151,7 +287,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * thrusting. If there are no appropriate commands, it returns null and
      * changes the appropriate state variables to reflect that.
      *
-     * @return movement command
+     * @return thrust command or null
      */
     protected ShipCommand whileThrust() {
         if (currentSpeed > distance / 2) {
@@ -175,7 +311,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * coasting. If there are no appropriate commands, it returns null and
      * changes the appropriate state variables to reflect that.
      *
-     * @return movement command
+     * @return idle command or null
      */
     protected ShipCommand whileCoast() {
         if (distance > 2 * currentSpeed) {
@@ -222,7 +358,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * Determines if there are any more steps to complete - if none, it will
      * return an IdleCommand.
      *
-     * @return idle command
+     * @return idle command or null
      */
     protected ShipCommand whileStop() {
         if (this.waypoints.length > current + 1) {
@@ -250,7 +386,7 @@ public abstract class BasicShip extends BasicSpaceship {
      *
      * @param current
      * @param goal
-     * @return the two points are the same
+     * @return if the two points are the same
      */
     public static boolean samePoint(Point current, Point goal) {
         return (Math.abs(current.getX() - goal.getX()) < BasicShip.POINT_ACCURACY) && (Math.abs(current.getY() - goal.getY()) < BasicShip.POINT_ACCURACY);
@@ -263,7 +399,7 @@ public abstract class BasicShip extends BasicSpaceship {
      * @param current
      * @param optimal
      * @param anglebounds
-     * @return the two points are the same
+     * @return if the two angles are the same
      */
     public static boolean sameAngle(double current, double optimal, double anglebounds) {
         return Math.abs(current - (optimal + 360) % 360) < anglebounds;
@@ -357,10 +493,22 @@ public abstract class BasicShip extends BasicSpaceship {
         return (current + ((int) Math.abs(current / size) + 1) * size) % size;
     }
 
+    /**
+     * Returns the world width. We can't have people changing the world width at
+     * will!
+     *
+     * @return worldWidth
+     */
     public double getWorldWidth() {
         return this.worldWidth;
     }
 
+    /**
+     * Returns the world height. We can't have people changing the world height
+     * at will!
+     *
+     * @return worldHeight
+     */
     public double getWorldHeight() {
         return this.worldHeight;
     }
