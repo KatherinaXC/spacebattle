@@ -301,7 +301,7 @@ public abstract class BasicShip extends BasicSpaceship {
             //if i'm going too fast, stop
             this.state = ShipState.BRAKE;
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
-            //if i can keep getting faster\, speed up
+            //if i can keep getting faster, speed up
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
         } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)

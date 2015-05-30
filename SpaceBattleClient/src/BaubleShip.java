@@ -1,6 +1,7 @@
 
 import ihs.apcs.spacebattle.*;
 import ihs.apcs.spacebattle.commands.*;
+import ihs.apcs.spacebattle.games.*;
 
 /**
  *
@@ -31,6 +32,8 @@ public class BaubleShip extends BasicShip {
      */
     protected double lastRadarLevel;
 
+    protected BaubleShipTargeting targetmode = BaubleShipTargeting.FLYING;
+
     /**
      * The selected next destination for FLYING.
      */
@@ -44,7 +47,7 @@ public class BaubleShip extends BasicShip {
     /**
      * The information for the Bauble Hunt game.
      */
-    protected BaubleHuntSCVGameInfo gameinfo;
+    protected BaubleHuntGameInfo gameinfo;
 
     /**
      * The furthest range from which the ship is willing to pursue shooting a
@@ -129,6 +132,11 @@ public class BaubleShip extends BasicShip {
                     break;
             }
         }
+        //save the gameinfo
+        BasicGameInfo tempinfo = be.getGameInfo();
+        if (tempinfo instanceof BaubleHuntGameInfo) {
+            this.gameinfo = (BaubleHuntGameInfo) tempinfo;
+        }
         //catches stateswitches during a case
         while (result == null) {
             //save the closest asteroid target for shooting
@@ -137,11 +145,22 @@ public class BaubleShip extends BasicShip {
                         -radarSpecific.getSpeed() * AsteroidShip.AIM_SPEED_FACTOR);
             }
             //save the appropriate bauble or homebase target for flying
-            if (this.gameinfo.getNumBaublesCarried() < this.MAX_BAUBLE_CAPACITY) {
+            if (this.gameinfo.getNumBaublesCarried() < BaubleShip.MAX_BAUBLE_CAPACITY) {
                 this.nextPhysicalTarget = optimalBauble();
             } else {
                 this.nextPhysicalTarget = this.gameinfo.getHomeBasePosition();
             }
+            //calculate optimal direction/vector and such based on my state and my shoot status
+            //TODO
+            Point target;
+            if (this.targetmode == BaubleShipTargeting.SHOOTING) {
+                target = this.nextShootingTarget;
+            } else {
+                target = this.nextPhysicalTarget;
+            }
+            this.optimalVect = this.direction(this.currentPosition, target);
+            this.optimalDirection = BaubleShip.getAngle(optimalVect);
+            distance = this.distance(this.currentPosition, target);
             switch (this.state) {
                 case RADAR:
                     result = whileRadar();
@@ -158,8 +177,16 @@ public class BaubleShip extends BasicShip {
                     System.out.println("Shoot");
                     result = whileShoot();
                     break;
+                case THRUST:
+                    result = whileThrust();
+                    break;
+                case COAST:
+                    result = whileCoast();
+                    break;
+                case BRAKE:
+                    result = whileBrake();
+                    break;
                 case STOP:
-                    System.out.println("Shot and retarget");
                     result = whileStop();
                     break;
                 default:
@@ -190,6 +217,13 @@ public class BaubleShip extends BasicShip {
         }
     }
 
+    @Override
+    protected ShipCommand whileStart() {
+        this.state = ShipState.TURN;
+        this.targetmode = BaubleShipTargeting.FLYING;
+        return null;
+    }
+
     /**
      * Determines the appropriate ShipCommand to return in the phase of turning.
      * If there are no appropriate commands, it returns null and changes the
@@ -204,24 +238,42 @@ public class BaubleShip extends BasicShip {
                 && !AsteroidShip.sameAngle(currentDirection + 180, optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
             //if i'm facing the wrong way (forwards or backwards) rotate
             double rotation = optimalDirection - currentDirection;
-            //fix over-90 rotations (gotta use back AND front!)
-            while (Math.abs(rotation) > 90) {
-                if (rotation > 0) {
-                    rotation = rotation - 180;
-                } else {
-                    rotation = rotation + 180;
+            if (this.targetmode == BaubleShipTargeting.SHOOTING) {
+                //shooting mode:
+                //fix over-90 rotations (gotta use back AND front!)
+                while (Math.abs(rotation) > 90) {
+                    if (rotation > 0) {
+                        rotation = rotation - 180;
+                    } else {
+                        rotation = rotation + 180;
+                    }
                 }
-            }
-            if (distance(this.currentPosition, this.nextShootingTarget) > AsteroidShip.SHOOT_RANGE) {
-                //if i'm out of range don't even try for that one
-                this.state = ShipState.STOP;
+                if (distance(this.currentPosition, this.nextShootingTarget) > AsteroidShip.SHOOT_RANGE) {
+                    //if i'm out of range don't even try for that one
+                    this.state = ShipState.STOP;
+                } else {
+                    //in range? switch to shooting
+                    this.state = ShipState.SHOOT;
+                }
             } else {
-                //in range? switch to shooting
-                this.state = ShipState.SHOOT;
+                //flying mode:
+                //fix over-180 rotations (gotta use back AND front!)
+                while (Math.abs(rotation) > 180) {
+                    if (rotation > 0) {
+                        rotation = rotation - 360;
+                    } else {
+                        rotation = rotation + 360;
+                    }
+                }
+                this.state = ShipState.THRUST;
             }
             return new RotateCommand(rotation);
         }
-        this.state = ShipState.SHOOT;
+        if (this.targetmode == BaubleShipTargeting.SHOOTING) {
+            this.state = ShipState.SHOOT;
+        } else {
+            this.state = ShipState.THRUST;
+        }
         return null;
     }
 
