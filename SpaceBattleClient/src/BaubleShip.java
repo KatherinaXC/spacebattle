@@ -22,6 +22,12 @@ public class BaubleShip extends BasicShip {
     protected ObjectStatus radarSpecific = null;
 
     /**
+     * The position that the target object will arrive at in a short period of
+     * time.
+     */
+    protected Point semiTarget = null;
+
+    /**
      * (Overridden) The state variable used for the state machine, starting at
      * ShipState.RADAR.
      */
@@ -31,26 +37,6 @@ public class BaubleShip extends BasicShip {
      * The last radar scan's level, saved for trans-method use.
      */
     protected double lastRadarLevel;
-
-    protected BaubleShipTargeting targetmode = BaubleShipTargeting.FLYING;
-
-    /**
-     * The selected next destination for FLYING.
-     */
-    protected Point nextPhysicalTarget;
-
-    /**
-     * The selected next destination for SHOOTING.
-     */
-    protected Point nextShootingTarget;
-
-    protected Point nextAimedTarget;
-
-    protected boolean returningHome = false;
-    /**
-     * The information for the Bauble Hunt game.
-     */
-    protected BaubleHuntGameInfo gameinfo;
 
     /**
      * The furthest range from which the ship is willing to pursue shooting a
@@ -76,8 +62,6 @@ public class BaubleShip extends BasicShip {
      */
     public static final double ANGLE_BOUNDS = 5;
 
-    public static final int MAX_BAUBLE_CAPACITY = 5;
-
     /**
      * This is a stupid useless constructor that exists solely for the purpose
      * of MAKING THE PROGRAM NOT CRASH ok bye.
@@ -87,7 +71,7 @@ public class BaubleShip extends BasicShip {
     }
 
     /**
-     * Constructor for an AsteroidShip, setting up the parameters worldWidth and
+     * Constructor for an BaubleShip, setting up the parameters worldWidth and
      * worldHeight.
      *
      * @param worldWidth the width of the world
@@ -99,7 +83,7 @@ public class BaubleShip extends BasicShip {
 
     @Override
     public void initializePoints() {
-        //we are using a different list for this :?
+        //We have no baubles to speak of :/
         this.waypoints = new Point[0];
     }
 
@@ -126,6 +110,7 @@ public class BaubleShip extends BasicShip {
             switch (be.getRadarLevel()) {
                 case 3:
                     System.out.println("Setting RadarSpecific");
+                    this.state = ShipState.START;
                     this.radarSpecific = be.getRadar().get(0);
                     break;
                 case 4:
@@ -134,18 +119,18 @@ public class BaubleShip extends BasicShip {
                     break;
             }
         }
-        //save the gameinfo
-        BasicGameInfo tempinfo = be.getGameInfo();
-        if (tempinfo instanceof BaubleHuntGameInfo) {
-            this.gameinfo = (BaubleHuntGameInfo) tempinfo;
-        }
         //catches stateswitches during a case
         while (result == null) {
-            this.updateTargets();
-            System.out.println("Flying to " + this.nextPhysicalTarget);
+            //only use these if we have passed our radar stage
+            if (radarSpecific != null) {
+                this.semiTarget = this.targetDest(radarSpecific.getPosition(), radarSpecific.getOrientation(),
+                        -radarSpecific.getSpeed() * BaubleShip.AIM_SPEED_FACTOR);
+                this.optimalVect = this.direction(shipStatus.getPosition(), this.semiTarget);
+                this.optimalDirection = BaubleShip.getAngle(optimalVect);
+                this.distance = this.distance(shipStatus.getPosition(), this.semiTarget);
+            }
             switch (this.state) {
                 case RADAR:
-                    System.out.println("Radar");
                     result = whileRadar();
                     break;
                 case START:
@@ -153,28 +138,15 @@ public class BaubleShip extends BasicShip {
                     result = whileStart();
                     break;
                 case TURN:
-                    System.out.println("Turn (target " + this.nextAimedTarget + ")");
+                    System.out.println("Turn target " + semiTarget);
                     result = whileTurn();
                     break;
                 case SHOOT:
                     System.out.println("Shoot");
                     result = whileShoot();
                     break;
-                case THRUST:
-                    System.out.println("Thrust");
-                    result = whileThrust();
-                    break;
-                case COAST:
-                    System.out.println("Coast");
-                    result = whileCoast();
-                    break;
-                case BRAKE:
-                    System.out.println("Brake");
-                    this.updateTargets();
-                    result = whileBrake();
-                    break;
                 case STOP:
-                    System.out.println("Stop");
+                    System.out.println("Shot and retarget");
                     result = whileStop();
                     break;
                 default:
@@ -185,32 +157,6 @@ public class BaubleShip extends BasicShip {
         return result;
     }
 
-    protected void updateTargets() {
-        //save the closest asteroid target for shooting
-        if (radarSpecific != null) {
-            this.nextShootingTarget = this.targetDest(radarSpecific.getPosition(), radarSpecific.getOrientation(),
-                    -radarSpecific.getSpeed() * AsteroidShip.AIM_SPEED_FACTOR);
-        }
-        //save the appropriate bauble or homebase target for flying
-        if (this.gameinfo.getNumBaublesCarried() < BaubleShip.MAX_BAUBLE_CAPACITY) {
-            this.returningHome = false;
-            this.nextPhysicalTarget = optimalBauble();
-        } else {
-            this.returningHome = true;
-            this.nextPhysicalTarget = this.gameinfo.getHomeBasePosition();
-        }
-        //calculate optimal direction/vector and such based on my state and my shoot status
-        //TODO
-        if (this.targetmode == BaubleShipTargeting.SHOOTING || this.nextPhysicalTarget == null) {
-            this.nextAimedTarget = this.nextShootingTarget;
-        } else {
-            this.nextAimedTarget = this.nextPhysicalTarget;
-        }
-        this.optimalVect = this.direction(this.currentPosition, this.nextAimedTarget);
-        this.optimalDirection = BaubleShip.getAngle(optimalVect);
-        this.distance = this.distance(this.currentPosition, this.nextAimedTarget);
-    }
-
     /**
      * Determines the appropriate ShipCommand to return in the phase of
      * obtaining radar. If there are no appropriate commands, it returns null
@@ -219,9 +165,8 @@ public class BaubleShip extends BasicShip {
      * @return radar command level 3 or 4
      */
     protected ShipCommand whileRadar() {
-        this.state = ShipState.START;
         int selectedID = closestID(currentPosition, currentDirection, currentSpeed, "Asteroid");
-        if (selectedID == -1 || this.radarGeneral == null || this.lastRadarLevel == 3) {
+        if (selectedID == -1 || this.radarGeneral == null || this.radarGeneral.size() == 0 || this.lastRadarLevel == 3) {
             //if i have no useful overall radar so far, or just took a specific check
             System.out.println("Checking RadarGeneral");
             return new RadarCommand(4);
@@ -230,13 +175,6 @@ public class BaubleShip extends BasicShip {
             System.out.println("Checking RadarSpecific");
             return new RadarCommand(3, selectedID);
         }
-    }
-
-    @Override
-    protected ShipCommand whileStart() {
-        this.state = ShipState.TURN;
-        this.targetmode = BaubleShipTargeting.FLYING;
-        return null;
     }
 
     /**
@@ -248,47 +186,29 @@ public class BaubleShip extends BasicShip {
      */
     @Override
     protected ShipCommand whileTurn() {
-        if (!AsteroidShip.sameAngle(currentDirection, optimalDirection, AsteroidShip.ANGLE_BOUNDS)
-                && !AsteroidShip.sameAngle(currentDirection + 180, optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+        System.out.println(optimalDirection - currentDirection);
+        if (!BaubleShip.sameAngle(currentDirection, optimalDirection, BaubleShip.ANGLE_BOUNDS)
+                && !BaubleShip.sameAngle(currentDirection + 180, optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm facing the wrong way (forwards or backwards) rotate
             double rotation = optimalDirection - currentDirection;
-            if (this.targetmode == BaubleShipTargeting.SHOOTING) {
-                //shooting mode:
-                //fix over-90 rotations (gotta use back AND front!)
-                while (Math.abs(rotation) > 90) {
-                    if (rotation > 0) {
-                        rotation = rotation - 180;
-                    } else {
-                        rotation = rotation + 180;
-                    }
-                }
-                if (distance(this.currentPosition, this.nextShootingTarget) > AsteroidShip.SHOOT_RANGE) {
-                    //if i'm out of range don't even try for that one
-                    this.state = ShipState.STOP;
+            //fix over-90 rotations (gotta use back AND front!)
+            while (Math.abs(rotation) > 90) {
+                if (rotation > 0) {
+                    rotation = rotation - 180;
                 } else {
-                    //in range? switch to shooting
-                    this.state = ShipState.SHOOT;
+                    rotation = rotation + 180;
                 }
-            } else {
-                //flying mode:
-                //fix over-180 rotations (gotta use back AND front!)
-                while (Math.abs(rotation) > 180) {
-                    if (rotation > 0) {
-                        rotation = rotation - 360;
-                    } else {
-                        rotation = rotation + 360;
-                    }
-                }
-                this.state = ShipState.THRUST;
             }
-            System.out.println(rotation);
+            if (distance(this.currentPosition, this.semiTarget) > BaubleShip.SHOOT_RANGE) {
+                //if i'm out of range don't even try for that one
+                this.state = ShipState.STOP;
+            } else {
+                //in range? switch to shooting
+                this.state = ShipState.SHOOT;
+            }
             return new RotateCommand(rotation);
         }
-        if (this.targetmode == BaubleShipTargeting.SHOOTING) {
-            this.state = ShipState.SHOOT;
-        } else {
-            this.state = ShipState.THRUST;
-        }
+        this.state = ShipState.SHOOT;
         return null;
     }
 
@@ -301,73 +221,13 @@ public class BaubleShip extends BasicShip {
      */
     protected ShipCommand whileShoot() {
         this.state = ShipState.STOP;
-        if (this.currentEnergy > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
-            if (AsteroidShip.sameAngle(this.currentDirection, this.optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+        if (this.currentEnergy > BaubleShip.SHOOT_ENERGY_THRESHOLD) {
+            if (BaubleShip.sameAngle(this.currentDirection, this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
                 return new FireTorpedoCommand('F');
             } else {
                 return new FireTorpedoCommand('B');
             }
         }
-        return null;
-    }
-
-    @Override
-    protected ShipCommand whileThrust() {
-        if (currentSpeed > distance / 2 || BaubleShip.samePoint(this.currentPosition, this.nextAimedTarget)) {
-            //if i'm going too fast or reached it, stop
-            System.out.println("Going to brake, going too fast");
-            this.state = ShipState.BRAKE;
-        } else if (this.gameinfo.getNumBaublesCarried() >= BaubleShip.MAX_BAUBLE_CAPACITY && !this.returningHome) {
-            //gotten all the baubles i needed on the way and aren't already going home
-            System.out.println("Going to brake, returning home now");
-            this.state = ShipState.BRAKE;
-        } else if (!BaubleShip.sameAngle(currentDirection, optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
-            //if i'm off course brake (then restart)
-            System.out.println("Going to brake, wrong angle");
-            this.state = ShipState.BRAKE;
-        } else if (currentSpeed < shipStatus.getMaxSpeed()) {
-            //if i can keep getting faster, speed up
-            System.out.println("Thrusting from the back");
-            return new ThrustCommand('B', BaubleShip.THRUST_TIME, BaubleShip.THRUST_SPEED);
-        } else {
-            //if i am currently at max, just keep path
-            System.out.println("Going to coast");
-            this.state = ShipState.COAST;
-        }
-        return null;
-    }
-
-    @Override
-    protected ShipCommand whileCoast() {
-        if (currentSpeed > distance / 2) {
-            //if the distance remaining isn't too close
-            //why not check the radar while i'm drifting
-            int selectedID = closestID(currentPosition, currentDirection, currentSpeed, "Asteroid");
-            if (selectedID == -1 || this.radarGeneral == null || this.lastRadarLevel == 3) {
-                //if i have no useful overall radar so far, or just took a specific check
-                System.out.println("Checking RadarGeneral");
-                return new RadarCommand(4);
-            } else {
-                //if I have general radar but no specific target
-                System.out.println("Checking RadarSpecific");
-                return new RadarCommand(3, selectedID);
-            }
-        } else if (this.gameinfo.getNumBaublesCarried() < BaubleShip.MAX_BAUBLE_CAPACITY && !this.returningHome) {
-            //gotten all the baubles i needed on the way
-            this.state = ShipState.BRAKE;
-        } else if (!BaubleShip.sameAngle(currentDirection, optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
-            //if i'm off course brake (then restart)
-            this.state = ShipState.BRAKE;
-        } else {
-            //if i'm too close brake
-            this.state = ShipState.BRAKE;
-        }
-        return null;
-    }
-
-    @Override
-    protected ShipCommand whileBrake() {
-        this.state = ShipState.TURN;
         return null;
     }
 
@@ -411,22 +271,42 @@ public class BaubleShip extends BasicShip {
         return id;
     }
 
-    public Point optimalBauble() {
-        if (this.gameinfo.getBaublePositions().isEmpty()) {
-            return null;
-        }
-        Point closest = this.gameinfo.getBaublePositions().get(0);
-        double mindistance = Double.MAX_VALUE;
-        for (Point test : this.gameinfo.getBaublePositions()) {
-            if (distance(test, this.currentPosition) < mindistance) {
-                mindistance = distance(test, this.currentPosition);
-                closest = test;
+    /**
+     * Returns if the given list of RadarResults contains any ObjectStatus
+     * matching the given ID.
+     *
+     * @param list RadarResults... from radar
+     * @param id ID to look for
+     * @return if the ID is included in the list
+     */
+    public static boolean containsObjectID(RadarResults list, int id) {
+        for (ObjectStatus test : list) {
+            if (test.getId() == id) {
+                return true;
             }
         }
-        return closest;
+        return false;
     }
-    
+
+    public static Point movementCancellation(Point originalMovement, Point optimalVector) {
+        double newX = optimalVector.getX() - originalMovement.getX();
+        double newY = optimalVector.getY() - originalMovement.getY();
+        return new Point(newX, newY);
+    }
+
     public static Point movementCancellation(double currentDirection, double currentSpeed, Point optimalVector) {
-        //TODO
+        double originalX = Math.asin(Math.toDegrees(currentDirection)) * currentSpeed;
+        double originalY = Math.acos(Math.toDegrees(currentDirection)) * currentSpeed;
+        Point originalMovement = new Point(originalX, originalY);
+        return BaubleShip.movementCancellation(originalMovement, optimalVector);
+    }
+
+    public static void main(String[] args) {
+        BaubleShip test = new BaubleShip(1024, 768);
+
+        Point p1 = new Point(0, 5);
+        Point p2 = new Point(5, 0);
+        System.out.println(p1 + " " + p2);
+        System.out.println(movementCancellation(p1, p2));
     }
 }
