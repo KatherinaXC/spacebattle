@@ -299,15 +299,19 @@ public abstract class BasicShip extends BasicSpaceship {
     protected ShipCommand whileThrust() {
         if (currentSpeed > distance / 2) {
             //if i'm going too fast, stop
+            System.out.println("Going to brake, going too fast");
             this.state = ShipState.BRAKE;
         } else if (currentSpeed < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
+            System.out.println("Thrusting from the back");
             return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
         } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
+            System.out.println("Going to brake, wrong angle");
             this.state = ShipState.BRAKE;
         } else {
             //if i am currently at max, just keep path
+            System.out.println("Going to coast");
             this.state = ShipState.COAST;
         }
         return null;

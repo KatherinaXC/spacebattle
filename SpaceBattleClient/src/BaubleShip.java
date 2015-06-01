@@ -44,6 +44,7 @@ public class BaubleShip extends BasicShip {
      */
     protected Point nextShootingTarget;
 
+    protected Point nextAimedTarget;
     /**
      * The information for the Bauble Hunt game.
      */
@@ -152,15 +153,14 @@ public class BaubleShip extends BasicShip {
             }
             //calculate optimal direction/vector and such based on my state and my shoot status
             //TODO
-            Point target;
-            if (this.targetmode == BaubleShipTargeting.SHOOTING) {
-                target = this.nextShootingTarget;
+            if (this.targetmode == BaubleShipTargeting.SHOOTING || this.nextPhysicalTarget == null) {
+                this.nextAimedTarget = this.nextShootingTarget;
             } else {
-                target = this.nextPhysicalTarget;
+                this.nextAimedTarget = this.nextPhysicalTarget;
             }
-            this.optimalVect = this.direction(this.currentPosition, target);
+            this.optimalVect = this.direction(this.currentPosition, this.nextAimedTarget);
             this.optimalDirection = BaubleShip.getAngle(optimalVect);
-            distance = this.distance(this.currentPosition, target);
+            this.distance = this.distance(this.currentPosition, this.nextAimedTarget);
             switch (this.state) {
                 case RADAR:
                     result = whileRadar();
@@ -233,7 +233,6 @@ public class BaubleShip extends BasicShip {
      */
     @Override
     protected ShipCommand whileTurn() {
-        System.out.println(optimalDirection - currentDirection);
         if (!AsteroidShip.sameAngle(currentDirection, optimalDirection, AsteroidShip.ANGLE_BOUNDS)
                 && !AsteroidShip.sameAngle(currentDirection + 180, optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
             //if i'm facing the wrong way (forwards or backwards) rotate
@@ -267,6 +266,7 @@ public class BaubleShip extends BasicShip {
                 }
                 this.state = ShipState.THRUST;
             }
+            System.out.println(rotation);
             return new RotateCommand(rotation);
         }
         if (this.targetmode == BaubleShipTargeting.SHOOTING) {
@@ -292,6 +292,64 @@ public class BaubleShip extends BasicShip {
             } else {
                 return new FireTorpedoCommand('B');
             }
+        }
+        return null;
+    }
+
+    @Override
+    protected ShipCommand whileThrust() {
+        if (currentSpeed > distance / 2 || BaubleShip.samePoint(this.currentPosition, this.nextAimedTarget)) {
+            //if i'm going too fast or reached it, stop
+            System.out.println("Going to brake, going too fast");
+            this.state = ShipState.BRAKE;
+        } else if (currentSpeed < shipStatus.getMaxSpeed()) {
+            //if i can keep getting faster, speed up
+            System.out.println("Thrusting from the back");
+            return new ThrustCommand('B', BasicShip.THRUST_TIME, BasicShip.THRUST_SPEED);
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
+            //if i'm off course brake (then restart)
+            System.out.println("Going to brake, wrong angle");
+            this.state = ShipState.BRAKE;
+        } else {
+            //if i am currently at max, just keep path
+            System.out.println("Going to coast");
+            this.state = ShipState.COAST;
+        }
+        return null;
+    }
+
+    @Override
+    protected ShipCommand whileCoast() {
+        if (distance > 2 * currentSpeed) {
+            //if the distance remaining isn't too close
+            return new IdleCommand(BasicShip.IDLE_TIME);
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
+            //if i'm off course brake (then restart)
+            this.state = ShipState.BRAKE;
+        } else {
+            //if i'm too close brake
+            this.state = ShipState.BRAKE;
+        }
+        return null;
+    }
+
+    @Override
+    protected ShipCommand whileBrake() {
+        if (currentSpeed < BasicShip.EFFECTIVE_STOP) {
+            //if i'm there already
+            if (samePoint(currentPosition, this.waypoints[current])) {
+                this.state = ShipState.STOP;
+                return new AllStopCommand();
+            } else {
+                //if i am no longer moving noticeably but not actually there, try again
+                this.state = ShipState.TURN;
+            }
+        } else if (!BasicShip.sameAngle(currentDirection, optimalDirection, BasicShip.ANGLE_BOUNDS)) {
+            //if i'm off course brake (eventually restart)
+            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
+        } else {
+            //if i can keep slowing down, do that
+            return new BrakeCommand(BasicShip.BRAKE_PERCENT);
         }
         return null;
     }
