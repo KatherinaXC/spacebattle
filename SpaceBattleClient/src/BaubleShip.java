@@ -41,6 +41,7 @@ public class BaubleShip extends BasicSpaceship {
     protected RadarResults radarGeneral;
     protected ObjectStatus radarSpecific;
 
+    protected BaubleShipTargeting currentGoal;
     protected Point targetFlying;
     protected Point targetShooting;
 
@@ -152,6 +153,7 @@ public class BaubleShip extends BasicSpaceship {
      * @param worldHeight The height of the world
      * @return RegistrationData for the world to handle
      */
+    @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
@@ -171,6 +173,20 @@ public class BaubleShip extends BasicSpaceship {
         this.env = be;
         this.shipStatus = be.getShipStatus();
         ShipCommand result = null;
+        //save the radar data if i have any
+        if (be.getRadar() != null) {
+            switch (be.getRadarLevel()) {
+                case 3:
+                    System.out.println("Setting RadarSpecific");
+                    this.state = ShipState.START;
+                    this.radarSpecific = be.getRadar().get(0);
+                    break;
+                case 4:
+                    System.out.println("Setting RadarGeneral");
+                    this.radarGeneral = be.getRadar();
+                    break;
+            }
+        }
         //catches stateswitches during a case
         while (result == null) {
             if (this.state != ShipState.RADAR) {
@@ -208,7 +224,9 @@ public class BaubleShip extends BasicSpaceship {
 
     protected ShipCommand whileRadar() {
         String[] goaltypes = {"Asteroid", "Bauble"};
-        int selectedID = closestID(currentPosition, currentDirection, currentSpeed, goaltypes);
+        int selectedID = closestID(this.shipStatus.getPosition(),
+                this.shipStatus.getMovementDirection(),
+                this.shipStatus.getSpeed(), goaltypes);
         if (selectedID == -1 || this.radarGeneral == null || this.radarGeneral.size() == 0 || this.env.getRadarLevel() == 3) {
             //if i have no useful overall radar so far, or my last check was a specific check
             System.out.println("Checking RadarGeneral");
@@ -240,27 +258,34 @@ public class BaubleShip extends BasicSpaceship {
      * @return turn command or null
      */
     protected ShipCommand whileTurn() {
-        if (BaubleShip.sameAngle(shipStatus.getOrientation(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
-            //if i'm in the right direction already, just drive
-            this.state = ShipState.THRUST;
-        } else {
-            //if i'm facing the wrong way rotate
-            double rotation = optimalDirection - shipStatus.getOrientation();
-            //fix over-180 rotations
-            while (Math.abs(rotation) > 180) {
-                if (rotation > 0) {
-                    rotation = rotation - 360;
-                } else {
-                    rotation = rotation + 360;
-                }
+        if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+            //if i am in the wrong direction, change my direction
+            if (this.currentGoal == BaubleShipTargeting.FLYING) {
+                this.state = ShipState.THRUST;
+            } else {
+                this.state = ShipState.SHOOT;
             }
-            return new RotateCommand(rotation);
+            return new RotateCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
+        } else {
+            if (this.currentGoal == BaubleShipTargeting.FLYING) {
+                this.state = ShipState.THRUST;
+            } else {
+                this.state = ShipState.SHOOT;
+            }
         }
         return null;
     }
 
     protected ShipCommand whileShoot() {
-
+        this.state = ShipState.STOP;
+        if (this.shipStatus.getEnergy() > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
+            if (AsteroidShip.sameAngle(this.shipStatus.getOrientation(), this.optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+                return new FireTorpedoCommand('F');
+            } else {
+                return new FireTorpedoCommand('B');
+            }
+        }
+        return null;
     }
 
     /**
@@ -271,15 +296,15 @@ public class BaubleShip extends BasicSpaceship {
      * @return thrust command or null
      */
     protected ShipCommand whileThrust() {
-        if (currentSpeed > distance / 2) {
+        if (this.shipStatus.getSpeed() > distance / 2) {
             //if i'm going too fast, stop
             System.out.println("Going to brake, going too fast");
             this.state = ShipState.BRAKE;
-        } else if (currentSpeed < shipStatus.getMaxSpeed()) {
+        } else if (this.shipStatus.getSpeed() < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
             System.out.println("Thrusting from the back");
             return new ThrustCommand('B', BaubleShip.THRUST_TIME, BaubleShip.THRUST_SPEED);
-        } else if (!BaubleShip.sameAngle(currentDirection, optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BaubleShip.sameAngle(this.shipStatus.getMovementDirection(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             System.out.println("Going to brake, wrong angle");
             this.state = ShipState.BRAKE;
@@ -299,10 +324,11 @@ public class BaubleShip extends BasicSpaceship {
      * @return idle command or null
      */
     protected ShipCommand whileCoast() {
-        if (distance > 2 * currentSpeed) {
+        if (distance > 2 * this.shipStatus.getSpeed()) {
             //if the distance remaining isn't too close
+            //TODO make this a radar check?
             return new IdleCommand(BaubleShip.IDLE_TIME);
-        } else if (!BaubleShip.sameAngle(currentDirection, optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BaubleShip.sameAngle(this.shipStatus.getMovementDirection(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -320,9 +346,10 @@ public class BaubleShip extends BasicSpaceship {
      * @return movement command
      */
     protected ShipCommand whileBrake() {
-        if (currentSpeed < BaubleShip.EFFECTIVE_STOP) {
+        //TODO make this a pathalter
+        if (this.shipStatus.getSpeed() < BaubleShip.EFFECTIVE_STOP) {
             //if i'm there already
-            if (samePoint(currentPosition, this.waypoints[current])) {
+            if (samePoint(this.shipStatus.getPosition(), this.waypoints[current])) {
                 this.state = ShipState.STOP;
                 return new AllStopCommand();
             } else {
@@ -346,14 +373,8 @@ public class BaubleShip extends BasicSpaceship {
      * @return idle command or null
      */
     protected ShipCommand whileStop() {
-        if (this.waypoints.length > current + 1) {
-            //if there's more points, increment and proceed
-            current++;
-            this.state = ShipState.START;
-        } else {
-            //if there's no more points, yay!
-            return new IdleCommand(BaubleShip.IDLE_TIME);
-        }
+        this.state = ShipState.RADAR;
+        this.radarSpecific = null;
         return null;
     }
 
@@ -367,7 +388,10 @@ public class BaubleShip extends BasicSpaceship {
 
     protected void obtainTargets() {
         //TODO
-        this.optimalVect = BaubleShip.
+        Point nextTarget;
+        optimalVect = this.direction(shipStatus.getPosition(), nextTarget);
+        optimalDirection = BaubleShip.getAngle(optimalVect);
+        distance = this.distance(shipStatus.getPosition(), nextTarget);
     }
 
     /**
@@ -379,7 +403,8 @@ public class BaubleShip extends BasicSpaceship {
      * @return if the two points are the same
      */
     public static boolean samePoint(Point p1, Point p2) {
-        return (Math.abs(p1.getX() - p2.getX()) < BaubleShip.POINT_ACCURACY) && (Math.abs(p1.getY() - p2.getY()) < BaubleShip.POINT_ACCURACY);
+        return (Math.abs(p1.getX() - p2.getX()) < BaubleShip.POINT_ACCURACY)
+                && (Math.abs(p1.getY() - p2.getY()) < BaubleShip.POINT_ACCURACY);
     }
 
     /**
@@ -514,6 +539,7 @@ public class BaubleShip extends BasicSpaceship {
      * @return -1 for no possibility or ID of closest matched type object
      */
     public int closestID(Point current, double angle, double speed, String[] type) {
+        //if there is no general radar don't bother
         if (this.radarGeneral == null) {
             return -1;
         }
@@ -521,16 +547,34 @@ public class BaubleShip extends BasicSpaceship {
         double min = Double.MAX_VALUE;
         int id = -1;
         for (ObjectStatus testing : this.radarGeneral) {
-            if (distance(testing.getPosition(), mydestination) < min) {
+            //want the angle difference to balance out too
+            Point tempVect = this.direction(shipStatus.getPosition(), testing.getPosition());
+            double tempDirection = BaubleShip.getAngle(tempVect);
+            tempDirection = BaubleShip.angleTo(angle, tempDirection);
+            if (distance(testing.getPosition(), mydestination) + tempDirection / 2 < min) {
                 for (String testingtype : type) {
                     if (testingtype.equals(testing.getName())) {
-                        min = distance(testing.getPosition(), mydestination);
+                        min = distance(testing.getPosition(), mydestination) + tempDirection / 2;
                         id = testing.getId();
                     }
                 }
             }
         }
         return id;
+    }
+
+    public static double angleTo(double currentOrientation, double optimalOrientation) {
+        //if i'm facing the wrong way rotate
+        double rotation = optimalOrientation - currentOrientation;
+        //fix over-180 rotations
+        while (Math.abs(rotation) > 180) {
+            if (rotation > 0) {
+                rotation = rotation - 360;
+            } else {
+                rotation = rotation + 360;
+            }
+        }
+        return rotation;
     }
 
     public static Point movementCancellation(Point originalMovement, Point optimalVector) {
