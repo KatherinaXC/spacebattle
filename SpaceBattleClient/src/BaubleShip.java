@@ -10,7 +10,7 @@ import java.awt.Color;
  *
  * @author s-zhouj
  */
-public abstract class BaubleShip extends BasicSpaceship {
+public class BaubleShip extends BasicSpaceship {
 
     /**
      * The width of the world (X parameter), as passed to BaubleShip by the
@@ -31,11 +31,15 @@ public abstract class BaubleShip extends BasicSpaceship {
     protected ShipState state = ShipState.START;
 
     protected BasicEnvironment env;
+
     /**
      * The ObjectStatus representing the ship. Updated on each call to
      * getNextCommand().
      */
     protected ObjectStatus shipStatus;
+
+    protected RadarResults radarGeneral;
+    protected ObjectStatus radarSpecific;
 
     protected Point targetFlying;
     protected Point targetShooting;
@@ -135,22 +139,9 @@ public abstract class BaubleShip extends BasicSpaceship {
     public static final Color SHIP_COLOR_MINT = new Color(204, 240, 225);
 
     /**
-     * This is a stupid useless constructor that exists solely for the purpose
-     * of MAKING THE PROGRAM NOT CRASH ok bye.
+     * Constructor for a BaubleShip... self explanatory. Does nothing.
      */
     public BaubleShip() {
-    }
-
-    /**
-     * Constructor for a BaubleShip, setting up the parameters worldWidth and
-     * worldHeight.
-     *
-     * @param worldWidth the width of the world that the ship will enter
-     * @param worldHeight the height of the world that the ship will enter
-     */
-    public BaubleShip(int worldWidth, int worldHeight) {
-        this.worldWidth = worldWidth;
-        this.worldHeight = worldHeight;
     }
 
     /**
@@ -161,21 +152,12 @@ public abstract class BaubleShip extends BasicSpaceship {
      * @param worldHeight The height of the world
      * @return RegistrationData for the world to handle
      */
-    @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
-        //Initialize waypoints
-        initializePoints();
         //End init
-        return new RegistrationData("just no", BaubleShip.SHIP_COLOR_MINT, BaubleShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("gallowsCalibrator", BaubleShip.SHIP_COLOR_MINT, BaubleShip.SHIP_IMAGE_ORB);
     }
-
-    /**
-     * Initializes the appropriate waypoints into the array of Points
-     * "waypoints".
-     */
-    public abstract void initializePoints();
 
     /**
      * Returns the command that the ship decides on taking.
@@ -191,7 +173,9 @@ public abstract class BaubleShip extends BasicSpaceship {
         ShipCommand result = null;
         //catches stateswitches during a case
         while (result == null) {
-            obtainTargets();
+            if (this.state != ShipState.RADAR) {
+                obtainTargets();
+            }
             switch (this.state) {
                 case RADAR:
                     result = whileRadar();
@@ -220,6 +204,20 @@ public abstract class BaubleShip extends BasicSpaceship {
             }
         }
         return result;
+    }
+
+    protected ShipCommand whileRadar() {
+        String[] goaltypes = {"Asteroid", "Bauble"};
+        int selectedID = closestID(currentPosition, currentDirection, currentSpeed, goaltypes);
+        if (selectedID == -1 || this.radarGeneral == null || this.radarGeneral.size() == 0 || this.env.getRadarLevel() == 3) {
+            //if i have no useful overall radar so far, or my last check was a specific check
+            System.out.println("Checking RadarGeneral");
+            return new RadarCommand(4);
+        } else {
+            //if I have general radar but no specific target
+            System.out.println("Checking RadarSpecific");
+            return new RadarCommand(3, selectedID);
+        }
     }
 
     /**
@@ -259,6 +257,10 @@ public abstract class BaubleShip extends BasicSpaceship {
             return new RotateCommand(rotation);
         }
         return null;
+    }
+
+    protected ShipCommand whileShoot() {
+
     }
 
     /**
@@ -499,6 +501,36 @@ public abstract class BaubleShip extends BasicSpaceship {
      */
     public double getWorldHeight() {
         return this.worldHeight;
+    }
+
+    /**
+     * Returns the ID of the closest object to the position indicated by the
+     * given parameters in radarGeneral that matches the given object type.
+     *
+     * @param current current position of center object
+     * @param angle current angle of center object
+     * @param speed current speed of center object
+     * @param type the type of object required
+     * @return -1 for no possibility or ID of closest matched type object
+     */
+    public int closestID(Point current, double angle, double speed, String[] type) {
+        if (this.radarGeneral == null) {
+            return -1;
+        }
+        Point mydestination = targetDest(current, angle, speed);
+        double min = Double.MAX_VALUE;
+        int id = -1;
+        for (ObjectStatus testing : this.radarGeneral) {
+            if (distance(testing.getPosition(), mydestination) < min) {
+                for (String testingtype : type) {
+                    if (testingtype.equals(testing.getName())) {
+                        min = distance(testing.getPosition(), mydestination);
+                        id = testing.getId();
+                    }
+                }
+            }
+        }
+        return id;
     }
 
     public static Point movementCancellation(Point originalMovement, Point optimalVector) {
