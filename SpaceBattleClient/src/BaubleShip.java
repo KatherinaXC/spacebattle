@@ -226,15 +226,7 @@ public class BaubleShip extends BasicSpaceship {
     }
 
     protected ShipCommand whileRadar() {
-        String[] goaltypes;
-        if (this.gameinfo.getNumBaublesCarried() < 5) {
-            goaltypes = new String[2];
-            goaltypes[0] = "Bauble";
-            goaltypes[1] = "Asteroid";
-        } else {
-            goaltypes = new String[1];
-            goaltypes[0] = "Asteroid";
-        }
+        String[] goaltypes = {"Bauble", "Asteroid"};
         int selectedID = closestID(this.shipStatus.getPosition(),
                 this.shipStatus.getMovementDirection(),
                 this.shipStatus.getSpeed(), goaltypes);
@@ -318,7 +310,7 @@ public class BaubleShip extends BasicSpaceship {
             //if i'm going too fast, stop
             System.out.println("Going to brake from thrust, going too fast");
             this.state = ShipState.BRAKE;
-        } else if (!BaubleShip.sameAngle(shipStatus.getMovementDirection(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             System.out.println("Going to brake from thrust, wrong angle");
             this.state = ShipState.BRAKE;
@@ -345,7 +337,7 @@ public class BaubleShip extends BasicSpaceship {
             //if the distance remaining isn't too close
             //TODO make this a radar check?
             return new IdleCommand(BaubleShip.IDLE_TIME);
-        } else if (!BaubleShip.sameAngle(shipStatus.getMovementDirection(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -379,7 +371,7 @@ public class BaubleShip extends BasicSpaceship {
                 //if i am no longer moving noticeably but not actually there, try again
                 this.state = ShipState.TURN;
             }
-        } else if (!BaubleShip.sameAngle(this.shipStatus.getMovementDirection(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BaubleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (eventually restart)
             return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
         } else {
