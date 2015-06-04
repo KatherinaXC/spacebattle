@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author s-zhouj
  */
-public class BattleShip {
+public class BattleShip extends BasicSpaceship {
 
     /**
      * The width of the world (X parameter), as passed to BattleShip by the
@@ -163,7 +163,7 @@ public class BattleShip {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //End init
-        return new RegistrationData("*o*", Color.GREEN, BattleShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("#SPECTATORSPORT", Color.WHITE, BattleShip.SHIP_IMAGE_ORB);
     }
 
     /**
@@ -372,28 +372,13 @@ public class BattleShip {
      * @return movement command
      */
     protected ShipCommand whileBrake() {
-        //TODO make this a pathalter???
+        //Test Pathalter Edition V
+        //this.state = ShipState.TURN;
+
+        //Working Edition V
         obtainTargets();
         this.state = ShipState.STOP;
         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
-        //Old stuff V
-        /*if (this.shipStatus.getSpeed() < BattleShip.EFFECTIVE_STOP) {
-         //if i'm there already
-         if (this.distance < BattleShip.POINT_ACCURACY) {
-         this.state = ShipState.STOP;
-         return new AllStopCommand();
-         } else {
-         //if i am no longer moving noticeably but not actually there, try again
-         this.state = ShipState.TURN;
-         }
-         } else if (!BattleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BattleShip.ANGLE_BOUNDS)) {
-         //if i'm off course brake (eventually restart)
-         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
-         } else {
-         //if i can keep slowing down, do that
-         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
-         }
-         return null;*/
     }
 
     /**
@@ -415,6 +400,7 @@ public class BattleShip {
      * anything in this method here, so it does nothing.
      */
     public void shipDestroyed() {
+        this.state = ShipState.RADAR;
     }
 
     protected boolean obtainTargets() {
