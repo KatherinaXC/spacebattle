@@ -3,7 +3,7 @@
  *
  * @author Aeranythe Echosong
  */
-public enum BaubleShipTargeting {
+public enum ShipTargeting {
 
     SHOOTING,
     FLYING

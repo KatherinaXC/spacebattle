@@ -1,27 +1,25 @@
+package BattleShip;
 
 import ihs.apcs.spacebattle.*;
-import ihs.apcs.spacebattle.commands.*;
 import ihs.apcs.spacebattle.games.*;
+import ihs.apcs.spacebattle.commands.*;
 import java.awt.Color;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
- * STUPID EFFING FRAMEWORK UPDATE BROKE SOMETHING AND I DON'T FEEL LIKE TRYING
- * TO FIX IT SO HERE'S A NEW JAVA FILE ALTOGETHER I HOPE YOU'RE HAPPY,
- * FRAMEWORK.
  *
  * @author s-zhouj
  */
-public class BaubleShip extends BasicSpaceship {
+public class BattleShip {
 
     /**
-     * The width of the world (X parameter), as passed to BaubleShip by the
+     * The width of the world (X parameter), as passed to BattleShip by the
      * constructor.
      */
     protected int worldWidth;
 
     /**
-     * The height of the world (Y parameter), as passed to BaubleShip by the
+     * The height of the world (Y parameter), as passed to BattleShip by the
      * constructor.
      */
     protected int worldHeight;
@@ -107,6 +105,11 @@ public class BaubleShip extends BasicSpaceship {
      */
     public static final double POINT_ACCURACY = 7;
     public static final double OBSTACLE_RANGE = 100;
+    /**
+     * The minimum energy available where the ship is willing to spend energy to
+     * shoot. (We need energy for movement too!)
+     */
+    public static final double SHOOT_ENERGY_THRESHOLD = 10;
 
     //Random other variables
     /**
@@ -144,9 +147,9 @@ public class BaubleShip extends BasicSpaceship {
     public static final Color SHIP_COLOR_MINT = new Color(204, 240, 225);
 
     /**
-     * Constructor for a BaubleShip... self explanatory. Does nothing.
+     * Constructor for a BattleShip... self explanatory. Does nothing.
      */
-    public BaubleShip() {
+    public BattleShip() {
     }
 
     /**
@@ -157,12 +160,11 @@ public class BaubleShip extends BasicSpaceship {
      * @param worldHeight The height of the world
      * @return RegistrationData for the world to handle
      */
-    @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //End init
-        return new RegistrationData("arsenicCatnip", Color.GREEN, BaubleShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("arsenicCatnip", Color.GREEN, BattleShip.SHIP_IMAGE_ORB);
     }
 
     /**
@@ -171,7 +173,6 @@ public class BaubleShip extends BasicSpaceship {
      * @param be the current game environment
      * @return next action
      */
-    @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
         //set up nonswitchaltered variables
         this.env = be;
@@ -269,7 +270,7 @@ public class BaubleShip extends BasicSpaceship {
      * @return turn command or null
      */
     protected ShipCommand whileTurn() {
-        if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BattleShip.ANGLE_BOUNDS)) {
             //if i am in the wrong direction, change my direction
             if (this.currentGoal == ShipTargeting.FLYING) {
                 this.state = ShipState.THRUST;
@@ -279,7 +280,7 @@ public class BaubleShip extends BasicSpaceship {
             System.out.println("Rotating " + angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
             System.out.println("Current Orientation " + this.shipStatus.getOrientation());
             System.out.println("Optimal Orientation " + this.optimalDirection);
-            if (this.shipStatus.getSpeed() <= BaubleShip.EFFECTIVE_STOP || withinObstacleRange() != -1) {
+            if (this.shipStatus.getSpeed() <= BattleShip.EFFECTIVE_STOP || withinObstacleRange() != -1) {
                 return new RotateCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
             } else {
                 return new SteerCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
@@ -297,8 +298,8 @@ public class BaubleShip extends BasicSpaceship {
     protected ShipCommand whileShoot() {
         System.out.println("Shooting");
         this.state = ShipState.STOP;
-        if (this.shipStatus.getEnergy() > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
-            if (AsteroidShip.sameAngle(this.shipStatus.getOrientation(), this.optimalDirection, AsteroidShip.ANGLE_BOUNDS)) {
+        if (this.shipStatus.getEnergy() > BattleShip.SHOOT_ENERGY_THRESHOLD) {
+            if (BattleShip.sameAngle(this.shipStatus.getOrientation(), this.optimalDirection, BattleShip.ANGLE_BOUNDS)) {
                 return new FireTorpedoCommand('F');
             } else {
                 return new FireTorpedoCommand('B');
@@ -316,12 +317,12 @@ public class BaubleShip extends BasicSpaceship {
      */
     protected ShipCommand whileThrust() {
         if (withinObstacleRange() != -1) {
-            return new WarpCommand(BaubleShip.OBSTACLE_RANGE * 2);
+            return new WarpCommand(BattleShip.OBSTACLE_RANGE * 2);
         } else if (this.shipStatus.getSpeed() > distance / 2) {
             //if i'm going too fast, stop
             System.out.println("Going to brake from thrust, going too fast");
             this.state = ShipState.BRAKE;
-        } else if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+        } else if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BattleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             System.out.println("Going to brake from thrust, wrong angle");
             this.state = ShipState.BRAKE;
@@ -333,7 +334,7 @@ public class BaubleShip extends BasicSpaceship {
             } else {
                 this.speed_scale = 0;
             }
-            return new ThrustCommand('B', BaubleShip.THRUST_TIME, BaubleShip.THRUST_SPEED + this.speed_scale);
+            return new ThrustCommand('B', BattleShip.THRUST_TIME, BattleShip.THRUST_SPEED + this.speed_scale);
         } else {
             //if i am currently at max, just keep path
             System.out.println("Going to coast from thrust");
@@ -353,8 +354,8 @@ public class BaubleShip extends BasicSpaceship {
         if (distance > 2 * this.shipStatus.getSpeed()) {
             //if the distance remaining isn't too close
             //TODO make this a radar check?
-            return new IdleCommand(BaubleShip.IDLE_TIME);
-        } else if (!BaubleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+            return new IdleCommand(BattleShip.IDLE_TIME);
+        } else if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.optimalDirection, BattleShip.ANGLE_BOUNDS)) {
             //if i'm off course brake (then restart)
             this.state = ShipState.BRAKE;
         } else {
@@ -375,23 +376,23 @@ public class BaubleShip extends BasicSpaceship {
         //TODO make this a pathalter???
         obtainTargets();
         this.state = ShipState.STOP;
-        return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
+        return new BrakeCommand(BattleShip.BRAKE_PERCENT);
         //Old stuff V
-        /*if (this.shipStatus.getSpeed() < BaubleShip.EFFECTIVE_STOP) {
+        /*if (this.shipStatus.getSpeed() < BattleShip.EFFECTIVE_STOP) {
          //if i'm there already
-         if (this.distance < BaubleShip.POINT_ACCURACY) {
+         if (this.distance < BattleShip.POINT_ACCURACY) {
          this.state = ShipState.STOP;
          return new AllStopCommand();
          } else {
          //if i am no longer moving noticeably but not actually there, try again
          this.state = ShipState.TURN;
          }
-         } else if (!BaubleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+         } else if (!BattleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BattleShip.ANGLE_BOUNDS)) {
          //if i'm off course brake (eventually restart)
-         return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
+         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
          } else {
          //if i can keep slowing down, do that
-         return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
+         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
          }
          return null;*/
     }
@@ -414,7 +415,6 @@ public class BaubleShip extends BasicSpaceship {
      * Called when the ship is destroyed. Apparently we don't need to do
      * anything in this method here, so it does nothing.
      */
-    @Override
     public void shipDestroyed() {
     }
 
@@ -434,7 +434,7 @@ public class BaubleShip extends BasicSpaceship {
         }
         this.optimalVect = this.direction(shipStatus.getPosition(), nextTarget);
         //this.optimalVect = movementCancellation(this.shipStatus.getMovementDirection(),this.shipStatus.getSpeed(),optimalVect);
-        this.optimalDirection = BaubleShip.getAngle(optimalVect);
+        this.optimalDirection = BattleShip.getAngle(optimalVect);
         this.distance = this.distance(shipStatus.getPosition(), nextTarget);
         if (this.radarSpecific.getType().equals("Bauble") || goingHome) {
             this.currentGoal = ShipTargeting.FLYING;
@@ -454,8 +454,8 @@ public class BaubleShip extends BasicSpaceship {
      * @return if the two points are the same
      */
     public static boolean samePoint(Point p1, Point p2) {
-        return (Math.abs(p1.getX() - p2.getX()) < BaubleShip.POINT_ACCURACY)
-                && (Math.abs(p1.getY() - p2.getY()) < BaubleShip.POINT_ACCURACY);
+        return (Math.abs(p1.getX() - p2.getX()) < BattleShip.POINT_ACCURACY)
+                && (Math.abs(p1.getY() - p2.getY()) < BattleShip.POINT_ACCURACY);
     }
 
     /**
@@ -529,8 +529,8 @@ public class BaubleShip extends BasicSpaceship {
     public Point targetDest(Point current, double angle, double distToGo) {
         double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
         double finalY = current.getY() - distToGo * (Math.sin(Math.toRadians(angle)));
-        finalX = BaubleShip.wrap(finalX, getWorldWidth());
-        finalY = BaubleShip.wrap(finalY, getWorldHeight());
+        finalX = BattleShip.wrap(finalX, getWorldWidth());
+        finalY = BattleShip.wrap(finalY, getWorldHeight());
         return new Point(finalX, finalY);
     }
 
@@ -632,7 +632,7 @@ public class BaubleShip extends BasicSpaceship {
     protected int withinObstacleRange() {
         for (ObjectStatus obstacle : this.stationaryObstacles) {
             double distancetoobstacle = distance(this.shipStatus.getPosition(), obstacle.getPosition());
-            if (distancetoobstacle < BaubleShip.OBSTACLE_RANGE) {
+            if (distancetoobstacle < BattleShip.OBSTACLE_RANGE) {
                 return (int) distancetoobstacle;
             }
         }
@@ -663,7 +663,6 @@ public class BaubleShip extends BasicSpaceship {
         double originalX = Math.asin(Math.toDegrees(currentDirection)) * currentSpeed;
         double originalY = Math.acos(Math.toDegrees(currentDirection)) * currentSpeed;
         Point originalMovement = new Point(originalX, originalY);
-        return OldBaubleShip.movementCancellation(originalMovement, optimalVector);
+        return BattleShip.movementCancellation(originalMovement, optimalVector);
     }
-
 }
