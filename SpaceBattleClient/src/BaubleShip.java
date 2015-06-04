@@ -3,6 +3,7 @@ import ihs.apcs.spacebattle.*;
 import ihs.apcs.spacebattle.commands.*;
 import ihs.apcs.spacebattle.games.*;
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  * STUPID EFFING FRAMEWORK UPDATE BROKE SOMETHING AND I DON'T FEEL LIKE TRYING
@@ -42,6 +43,7 @@ public class BaubleShip extends BasicSpaceship {
 
     protected RadarResults radarGeneral;
     protected ObjectStatus radarSpecific;
+    protected ArrayList<ObjectStatus> stationaryObstacles = new ArrayList<ObjectStatus>();
 
     protected BaubleShipTargeting currentGoal;
 
@@ -80,6 +82,7 @@ public class BaubleShip extends BasicSpaceship {
      * thrusting.
      */
     public static final double THRUST_SPEED = 0.1;
+    protected double speed_scale = 0;
 
     /**
      * The amount of time that the ship will spend doing nothing on each idle
@@ -91,7 +94,7 @@ public class BaubleShip extends BasicSpaceship {
      * The margin of error that the ship will tolerate when calculating angles
      * of rotation.
      */
-    public static final double ANGLE_BOUNDS = 7;
+    public static final double ANGLE_BOUNDS = 15;
 
     /**
      * The fastest speed that the ship will accept as 'stopping', since there is
@@ -103,6 +106,7 @@ public class BaubleShip extends BasicSpaceship {
      * The radius which the ship must stop within on each given waypoint.
      */
     public static final double POINT_ACCURACY = 7;
+    public static final double OBSTACLE_RANGE = 100;
 
     //Random other variables
     /**
@@ -158,7 +162,7 @@ public class BaubleShip extends BasicSpaceship {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //End init
-        return new RegistrationData("gallowsCalibrator", BaubleShip.SHIP_COLOR_MINT, BaubleShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("arsenicCatnip", Color.GREEN, BaubleShip.SHIP_IMAGE_ORB);
     }
 
     /**
@@ -187,6 +191,7 @@ public class BaubleShip extends BasicSpaceship {
                 case 4:
                     System.out.println("Setting RadarGeneral");
                     this.radarGeneral = be.getRadar();
+                    this.stationaryObstacles = updateObstacles(stationaryObstacles);
                     break;
             }
         }
@@ -274,7 +279,11 @@ public class BaubleShip extends BasicSpaceship {
             System.out.println("Rotating " + angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
             System.out.println("Current Orientation " + this.shipStatus.getOrientation());
             System.out.println("Optimal Orientation " + this.optimalDirection);
-            return new RotateCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
+            if (this.shipStatus.getSpeed() <= BaubleShip.EFFECTIVE_STOP || withinObstacleRange() != -1) {
+                return new RotateCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
+            } else {
+                return new SteerCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
+            }
         } else {
             if (this.currentGoal == BaubleShipTargeting.FLYING) {
                 this.state = ShipState.THRUST;
@@ -306,7 +315,9 @@ public class BaubleShip extends BasicSpaceship {
      * @return thrust command or null
      */
     protected ShipCommand whileThrust() {
-        if (this.shipStatus.getSpeed() > distance / 2) {
+        if (withinObstacleRange() != -1) {
+            return new WarpCommand(BaubleShip.OBSTACLE_RANGE * 2);
+        } else if (this.shipStatus.getSpeed() > distance / 2) {
             //if i'm going too fast, stop
             System.out.println("Going to brake from thrust, going too fast");
             this.state = ShipState.BRAKE;
@@ -316,7 +327,13 @@ public class BaubleShip extends BasicSpaceship {
             this.state = ShipState.BRAKE;
         } else if (this.shipStatus.getSpeed() < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
-            return new ThrustCommand('B', BaubleShip.THRUST_TIME, BaubleShip.THRUST_SPEED);
+            if (this.shipStatus.getSpeed() < this.distance / 2 && this.speed_scale < 0.9 - 0.005) {
+                //to attempt to escape gravity wells/nebula relatively easily
+                this.speed_scale += 0.001;
+            } else {
+                this.speed_scale = 0;
+            }
+            return new ThrustCommand('B', BaubleShip.THRUST_TIME, BaubleShip.THRUST_SPEED + this.speed_scale);
         } else {
             //if i am currently at max, just keep path
             System.out.println("Going to coast from thrust");
@@ -356,29 +373,27 @@ public class BaubleShip extends BasicSpaceship {
      */
     protected ShipCommand whileBrake() {
         //TODO make this a pathalter???
-        /*
-         obtainTargets();
-         this.state = ShipState.STOP;
-         return new BrakeCommand(BaubleShip.BRAKE_PERCENT);*/
+        obtainTargets();
+        this.state = ShipState.STOP;
+        return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
         //Old stuff V
-
-        if (this.shipStatus.getSpeed() < BaubleShip.EFFECTIVE_STOP) {
-            //if i'm there already
-            if (this.distance < BaubleShip.POINT_ACCURACY) {
-                this.state = ShipState.STOP;
-                return new AllStopCommand();
-            } else {
-                //if i am no longer moving noticeably but not actually there, try again
-                this.state = ShipState.TURN;
-            }
-        } else if (!BaubleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
-            //if i'm off course brake (eventually restart)
-            return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
-        } else {
-            //if i can keep slowing down, do that
-            return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
-        }
-        return null;
+        /*if (this.shipStatus.getSpeed() < BaubleShip.EFFECTIVE_STOP) {
+         //if i'm there already
+         if (this.distance < BaubleShip.POINT_ACCURACY) {
+         this.state = ShipState.STOP;
+         return new AllStopCommand();
+         } else {
+         //if i am no longer moving noticeably but not actually there, try again
+         this.state = ShipState.TURN;
+         }
+         } else if (!BaubleShip.sameAngle(this.shipStatus.getOrientation(), optimalDirection, BaubleShip.ANGLE_BOUNDS)) {
+         //if i'm off course brake (eventually restart)
+         return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
+         } else {
+         //if i can keep slowing down, do that
+         return new BrakeCommand(BaubleShip.BRAKE_PERCENT);
+         }
+         return null;*/
     }
 
     /**
@@ -583,14 +598,10 @@ public class BaubleShip extends BasicSpaceship {
         double min = Double.MAX_VALUE;
         int id = -1;
         for (ObjectStatus testing : this.radarGeneral) {
-            //want the angle difference to balance out too
-            Point tempVect = this.direction(shipStatus.getPosition(), testing.getPosition());
-            double tempDirection = BaubleShip.getAngle(tempVect);
-            tempDirection = BaubleShip.angleTo(angle, tempDirection);
-            if (distance(testing.getPosition(), mydestination) + tempDirection / 2 < min) {
+            if (distance(testing.getPosition(), mydestination) < min) {
                 for (String testingtype : type) {
                     if (testingtype.equals(testing.getType())) {
-                        min = distance(testing.getPosition(), mydestination) + tempDirection / 2;
+                        min = distance(testing.getPosition(), mydestination);
                         id = testing.getId();
                     }
                 }
@@ -598,6 +609,34 @@ public class BaubleShip extends BasicSpaceship {
         }
         System.out.println("ClosestID " + id);
         return id;
+    }
+
+    protected ArrayList<ObjectStatus> updateObstacles(ArrayList<ObjectStatus> previous) {
+        //pre: have general radar
+        for (ObjectStatus test : this.radarGeneral) {
+            if (test.getType().equals("Planet")) {
+                boolean contains = false;
+                for (ObjectStatus contained : previous) {
+                    if (contained.getId() == test.getId()) {
+                        contains = true;
+                    }
+                }
+                if (!contains) {
+                    previous.add(test);
+                }
+            }
+        }
+        return previous;
+    }
+
+    protected int withinObstacleRange() {
+        for (ObjectStatus obstacle : this.stationaryObstacles) {
+            double distancetoobstacle = distance(this.shipStatus.getPosition(), obstacle.getPosition());
+            if (distancetoobstacle < BaubleShip.OBSTACLE_RANGE) {
+                return (int) distancetoobstacle;
+            }
+        }
+        return -1;
     }
 
     public static double angleTo(double currentOrientation, double optimalOrientation) {
