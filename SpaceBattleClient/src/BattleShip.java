@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  *
- * @author s-zhouj
+ * @author Aeranythe Echosong
  */
 public class BattleShip extends BasicSpaceship {
 
@@ -163,7 +163,7 @@ public class BattleShip extends BasicSpaceship {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //End init
-        return new RegistrationData("#SPECTATORSPORT", Color.WHITE, BattleShip.SHIP_IMAGE_ORB);
+        return new RegistrationData("carcinoGeneticist", Color.GRAY, BattleShip.SHIP_IMAGE_TARDIS);
     }
 
     /**
@@ -279,7 +279,7 @@ public class BattleShip extends BasicSpaceship {
             System.out.println("Rotating " + angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
             System.out.println("Current Orientation " + this.shipStatus.getOrientation());
             System.out.println("Optimal Orientation " + this.optimalDirection);
-            if (this.shipStatus.getSpeed() <= BattleShip.EFFECTIVE_STOP || withinObstacleRange() != -1) {
+            if (this.shipStatus.getSpeed() <= BattleShip.EFFECTIVE_STOP) {
                 return new RotateCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
             } else {
                 return new SteerCommand(angleTo(this.shipStatus.getOrientation(), this.optimalDirection));
@@ -377,7 +377,7 @@ public class BattleShip extends BasicSpaceship {
 
         //Working Edition V
         obtainTargets();
-        this.state = ShipState.STOP;
+        this.state = ShipState.TURN;
         return new BrakeCommand(BattleShip.BRAKE_PERCENT);
     }
 
@@ -404,6 +404,7 @@ public class BattleShip extends BasicSpaceship {
     }
 
     protected boolean obtainTargets() {
+        System.out.println("Getting targets");
         if (this.radarGeneral == null || this.radarSpecific == null) {
             return false;
         }
@@ -597,6 +598,7 @@ public class BattleShip extends BasicSpaceship {
     }
 
     protected ArrayList<ObjectStatus> updateObstacles(ArrayList<ObjectStatus> previous) {
+        System.out.println("Updating obstacles");
         //pre: have general radar
         for (ObjectStatus test : this.radarGeneral) {
             if (test.getType().equals("Planet")) {
@@ -615,6 +617,7 @@ public class BattleShip extends BasicSpaceship {
     }
 
     protected int withinObstacleRange() {
+        System.out.println("Testing if I'm in obstacle range");
         for (ObjectStatus obstacle : this.stationaryObstacles) {
             double distancetoobstacle = distance(this.shipStatus.getPosition(), obstacle.getPosition());
             if (distancetoobstacle < BattleShip.OBSTACLE_RANGE) {
