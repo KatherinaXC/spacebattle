@@ -92,6 +92,7 @@ public class BattleShip extends BasicSpaceship {
      * of rotation.
      */
     public static final double ANGLE_BOUNDS = 15;
+    public static double OBSTACLE_BOUNDS = 30;
 
     /**
      * The fastest speed that the ship will accept as 'stopping', since there is
@@ -163,7 +164,7 @@ public class BattleShip extends BasicSpaceship {
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         //End init
-        return new RegistrationData("carcinoGeneticist", Color.GRAY, BattleShip.SHIP_IMAGE_TARDIS);
+        return new RegistrationData("F8!!!!!!!!", Color.WHITE, BattleShip.SHIP_IMAGE_SOVIET);
     }
 
     /**
@@ -315,8 +316,9 @@ public class BattleShip extends BasicSpaceship {
      * @return thrust command or null
      */
     protected ShipCommand whileThrust() {
-        if (withinObstacleRange() != -1) {
-            return new WarpCommand(BattleShip.OBSTACLE_RANGE * 2);
+        double obstacleStatus = headingTowardsObstacle();
+        if (obstacleStatus != -1) {
+            return new WarpCommand(obstacleStatus * 2);
         } else if (this.shipStatus.getSpeed() > distance / 2) {
             //if i'm going too fast, stop
             System.out.println("Going to brake from thrust, going too fast");
@@ -327,7 +329,7 @@ public class BattleShip extends BasicSpaceship {
             this.state = ShipState.BRAKE;
         } else if (this.shipStatus.getSpeed() < shipStatus.getMaxSpeed()) {
             //if i can keep getting faster, speed up
-            if (this.shipStatus.getSpeed() < this.distance / 2 && this.speed_scale < 0.9 - 0.005) {
+            if (this.shipStatus.getSpeed() < this.distance / 2 && this.speed_scale < 10 - BattleShip.THRUST_SPEED - 0.005) {
                 //to attempt to escape gravity wells/nebula relatively easily
                 this.speed_scale += 0.001;
             } else {
@@ -527,7 +529,7 @@ public class BattleShip extends BasicSpaceship {
      * @return degree of given vector
      */
     public static double getAngle(Point vector) {
-        double degree = Math.toDegrees(Math.atan(-vector.getY() / vector.getX()));
+        double degree = Math.toDegrees(Math.atan2(-vector.getY(), vector.getX()));
         if (vector.getX() < 0) {
             degree += 180;
         }
@@ -616,12 +618,25 @@ public class BattleShip extends BasicSpaceship {
         return previous;
     }
 
-    protected int withinObstacleRange() {
-        System.out.println("Testing if I'm in obstacle range");
+    protected double withinObstacleRange() {
+        System.out.println("Testing if I'm within obstacle range");
         for (ObjectStatus obstacle : this.stationaryObstacles) {
             double distancetoobstacle = distance(this.shipStatus.getPosition(), obstacle.getPosition());
             if (distancetoobstacle < BattleShip.OBSTACLE_RANGE) {
-                return (int) distancetoobstacle;
+                return distancetoobstacle;
+            }
+        }
+        return -1;
+    }
+
+    protected double headingTowardsObstacle() {
+        System.out.println("Testing if I'm heading towards an obstacle");
+        for (ObjectStatus obstacle : this.stationaryObstacles) {
+            double distancetoobstacle = distance(this.shipStatus.getPosition(), obstacle.getPosition());
+            if (distancetoobstacle < BattleShip.OBSTACLE_RANGE) {
+                if (Math.abs(BattleShip.angleTo(this.shipStatus.getOrientation(), this.optimalDirection)) < BattleShip.OBSTACLE_BOUNDS) {
+                    return distancetoobstacle;
+                }
             }
         }
         return -1;
