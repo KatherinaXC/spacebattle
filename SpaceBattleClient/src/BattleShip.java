@@ -16,6 +16,14 @@ public class BattleShip extends BasicSpaceship {
     private double worldHeight;
     private ShipState state;
 
+    //targeting information
+    private double targetAngle;
+    private double targetDistance;
+
+    //radar data
+    private RadarResults radar;
+    private ArrayList<ObjectStatus> stationaryObstacles = new ArrayList<ObjectStatus>();
+
     //game and environment information
     private BasicEnvironment env;
     private ObjectStatus myStatus;
@@ -42,7 +50,7 @@ public class BattleShip extends BasicSpaceship {
         this.worldHeight = worldHeight;
         this.state = ShipState.RADAR;
         //End init
-        return new RegistrationData("H8YouToo::::3", Color.WHITE, BattleShip.SHIP_IMAGE_SOVIET);
+        return new RegistrationData("~8~", Color.WHITE, BattleShip.SHIP_IMAGE_SOVIET);
     }
 
     /**
@@ -64,10 +72,16 @@ public class BattleShip extends BasicSpaceship {
     public ShipCommand getNextCommand(BasicEnvironment be) {
         this.env = be;
         this.myStatus = be.getShipStatus();
+        if (be.getRadar() != null) {
+            this.radar = be.getRadar();
+            updateStationaryObstacles();
+            this.state = ShipState.START;
+        }
         ShipCommand result = null;
         while (result == null) {
             switch (this.state) {
                 case RADAR:
+                    result = new RadarCommand(5);
                     break;
                 case START:
                     break;
@@ -84,6 +98,9 @@ public class BattleShip extends BasicSpaceship {
             }
         }
         return result;
+    }
+
+    private void updateStationaryObstacles() {
     }
 
 }

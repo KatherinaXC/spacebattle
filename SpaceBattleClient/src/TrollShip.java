@@ -13,7 +13,7 @@ public class TrollShip extends BasicSpaceship {
     private boolean Shooting = false;
 
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
-        return new RegistrationData("YOLO", Color.YELLOW, OldBattleShip.SHIP_IMAGE_SOVIET);
+        return new RegistrationData("802.11g Hotspot", Color.WHITE, OldBattleShip.SHIP_IMAGE_TARDIS);
     }
 
     @Override
