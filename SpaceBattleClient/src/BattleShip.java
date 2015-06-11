@@ -163,6 +163,10 @@ public class BattleShip extends BasicSpaceship {
         return result;
     }
 
+    /**
+     * Reads the current radar data and saves any applicable obstacles (planets,
+     * black holes, not nebulae) to my list of obstacles.
+     */
     private void updateStationaryObstacles() {
         List<ObjectStatus> toTest = this.radar.getByType("Planet");
         toTest.addAll(this.radar.getByType("BlackHole"));
@@ -173,6 +177,11 @@ public class BattleShip extends BasicSpaceship {
         }
     }
 
+    /**
+     * Sets applicable fields so that the getNextCommand can calculate which
+     * action to take based off of the current thrust/shoot imperative and the
+     * target.
+     */
     private void updateTargets() {
         boolean goingHome = this.gameinfo.getNumBaublesCarried() >= 5;
         ObjectStatus targetStatus = selectTarget();
@@ -200,6 +209,11 @@ public class BattleShip extends BasicSpaceship {
         }
     }
 
+    /**
+     * Evaluates which target to pursue.
+     *
+     * @return the ObjectStatus of the selected target
+     */
     private ObjectStatus selectTarget() {
         Point mydestination = targetDest(this.shipStatus.getPosition(),
                 this.shipStatus.getMovementDirection(),
@@ -219,6 +233,12 @@ public class BattleShip extends BasicSpaceship {
         return target;
     }
 
+    /**
+     * Returns the ObjectStatus of a given obstacle if it is pulling the ship
+     * away from its course.
+     *
+     * @return ObjectStatus of a planet or black hole
+     */
     private ObjectStatus obstaclePull() {
         for (ObjectStatus obstacle : this.stationaryObstacles) {
             if (distance(this.shipStatus.getPosition(), obstacle.getPosition()) < obstacle.getPullStrength()) {
@@ -291,6 +311,14 @@ public class BattleShip extends BasicSpaceship {
         return new Point(finalX, finalY);
     }
 
+    /**
+     * Returns the (rectified) angle difference between the current orientation
+     * and the optimal orientation.
+     *
+     * @param currentOrientation
+     * @param optimalOrientation
+     * @return angle difference in optimal turn format
+     */
     public static double angleTo(double currentOrientation, double optimalOrientation) {
         //if i'm facing the wrong way rotate
         double rotation = optimalOrientation - currentOrientation;
