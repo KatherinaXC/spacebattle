@@ -58,6 +58,7 @@ public class BattleShip extends BasicSpaceship {
      */
     @Override
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
+        //Set internal world width and height
         this.worldWidth = worldWidth;
         this.worldHeight = worldHeight;
         this.state = ShipState.RADAR;
@@ -82,19 +83,23 @@ public class BattleShip extends BasicSpaceship {
      */
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
+        //Grab data from the BE and store it
         this.env = be;
         this.shipStatus = be.getShipStatus();
         BasicGameInfo bgameinfo = be.getGameInfo();
         if (bgameinfo instanceof BaubleHuntGameInfo) {
             this.gameinfo = (BaubleHuntGameInfo) bgameinfo;
         }
+        //Update radar
         if (be.getRadar() != null) {
             this.radar = be.getRadar();
             updateStationaryObstacles();
             this.state = ShipState.START;
         }
+        //Main result loop
         ShipCommand result = null;
         while (result == null) {
+            //If I have some type of radar to work with, update my targets
             if (this.state != ShipState.RADAR) {
                 updateTargets();
             }
@@ -103,23 +108,26 @@ public class BattleShip extends BasicSpaceship {
                     result = new RadarCommand(5);
                     break;
                 case START:
-                    //honestly this is here just for tradition's sake
+                    //honestly this is here just for tradition's sake :P
                     this.state = ShipState.TURN;
                     break;
                 case TURN:
+                    //Preset the state for the next iteration
                     if (this.targetingAction == ShipState.SHOOT) {
                         this.state = ShipState.SHOOT;
                     } else {
                         this.state = ShipState.THRUST;
                     }
-                    //if i need to turn, do that too
+                    //if i need to turn, do that
                     if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.targetAngleAbsolute, BattleShip.ANGLE_BOUNDS)) {
                         result = new RotateCommand(BattleShip.angleTo(this.shipStatus.getOrientation(), this.targetAngleAbsolute));
                     }
                     break;
                 case SHOOT:
+                    //Shooting is done on a casebycase basis
                     this.state = ShipState.STOP;
                     if (this.shipStatus.getEnergy() > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
+                        //We want to shoot both front and back
                         if (BattleShip.sameAngle(this.shipStatus.getOrientation(), this.targetAngleAbsolute, BattleShip.ANGLE_BOUNDS)) {
                             result = new FireTorpedoCommand('F');
                         } else {
@@ -128,6 +136,7 @@ public class BattleShip extends BasicSpaceship {
                     }
                     break;
                 case THRUST:
+                    //If we are being pulled, warp out of there!!!!!!!!
                     ObjectStatus obstacle = obstaclePull();
                     if (obstacle != null) {
                         result = new WarpCommand(obstacle.getPullStrength() * 2);
@@ -135,13 +144,13 @@ public class BattleShip extends BasicSpaceship {
                         //if i'm going too fast, stop
                         this.state = ShipState.BRAKE;
                     } else if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.targetAngleAbsolute, BaubleShip.ANGLE_BOUNDS)) {
-                        //if i'm off course brake (then restart)
+                        //if i'm off course brake (eventually then restart)
                         this.state = ShipState.BRAKE;
                     } else if (this.shipStatus.getSpeed() < shipStatus.getMaxSpeed()) {
                         //if i can keep getting faster, speed up
                         if (this.shipStatus.getSpeed() < this.targetDistance / 2
                                 && this.scalingSpeed < 1 - BattleShip.THRUST_SPEED - 0.005) {
-                            //to attempt to escape nebula relatively easily
+                            //to attempt to escape nebula relatively easily, this won't work for BHs
                             this.scalingSpeed += 0.001;
                         } else {
                             this.scalingSpeed = 0;
@@ -150,11 +159,13 @@ public class BattleShip extends BasicSpaceship {
                     }
                     break;
                 case BRAKE:
+                    //Brake and reevaluate
                     updateTargets();
                     this.state = ShipState.STOP;
                     result = new BrakeCommand(BattleShip.BRAKE_PERCENT);
                     break;
                 case STOP:
+                    //Reset radar state to do a clean search
                     this.state = ShipState.RADAR;
                     this.radar = null;
                     break;
@@ -168,8 +179,10 @@ public class BattleShip extends BasicSpaceship {
      * black holes, not nebulae) to my list of obstacles.
      */
     private void updateStationaryObstacles() {
+        //Get a list with all planets and black holes
         List<ObjectStatus> toTest = this.radar.getByType("Planet");
         toTest.addAll(this.radar.getByType("BlackHole"));
+        //Run through the list, patching stationaryObstacles as we go
         for (ObjectStatus current : toTest) {
             if (!this.stationaryObstacles.contains(current)) {
                 this.stationaryObstacles.add(current);
@@ -183,6 +196,7 @@ public class BattleShip extends BasicSpaceship {
      * target.
      */
     private void updateTargets() {
+        //Basic variables so we can read them easily and not retype :P
         boolean goingHome = this.gameinfo.getNumBaublesCarried() >= 5;
         ObjectStatus targetStatus = selectTarget();
         //if we actually have a target to shoot at, great
@@ -195,9 +209,11 @@ public class BattleShip extends BasicSpaceship {
                 targetStatus = selectTarget();
                 this.targetPosition = targetStatus.getPosition();
             }
+            //Set motion/target variables
             this.targetVector = this.direction(shipStatus.getPosition(), this.targetPosition);
             this.targetAngleAbsolute = BattleShip.getAngle(this.targetVector);
             this.targetDistance = this.distance(shipStatus.getPosition(), this.targetPosition);
+            //Set motion/target hitmode
             if (targetStatus.getType().equals("Bauble") || goingHome) {
                 this.targetingAction = ShipState.THRUST;
             } else {
@@ -215,9 +231,11 @@ public class BattleShip extends BasicSpaceship {
      * @return the ObjectStatus of the selected target
      */
     private ObjectStatus selectTarget() {
+        //Use my velocity to account for some efficiency? Could also help avoid collisions
         Point mydestination = targetDest(this.shipStatus.getPosition(),
                 this.shipStatus.getMovementDirection(),
                 this.shipStatus.getSpeed());
+        //Main minimizer loop
         double min = Double.MAX_VALUE;
         ObjectStatus target = null;
         for (ObjectStatus testing : this.radar) {
@@ -240,6 +258,7 @@ public class BattleShip extends BasicSpaceship {
      * @return ObjectStatus of a planet or black hole
      */
     private ObjectStatus obstaclePull() {
+        //Run through the stationaryObstacles, checking ranges
         for (ObjectStatus obstacle : this.stationaryObstacles) {
             if (distance(this.shipStatus.getPosition(), obstacle.getPosition()) < obstacle.getPullStrength()) {
                 return obstacle;
@@ -322,7 +341,7 @@ public class BattleShip extends BasicSpaceship {
     public static double angleTo(double currentOrientation, double optimalOrientation) {
         //if i'm facing the wrong way rotate
         double rotation = optimalOrientation - currentOrientation;
-        //fix over-180 rotations
+        //*rectify* (word of the week/day/hour/minute) over-180 rotations
         while (Math.abs(rotation) > 180) {
             if (rotation > 0) {
                 rotation = rotation - 360;
