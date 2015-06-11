@@ -15,18 +15,30 @@ public class BattleShip extends BasicSpaceship {
     private double worldWidth;
     private double worldHeight;
     private ShipState state;
+    private double scalingSpeed = 0;
 
     //targeting information
-    private double targetAngle;
+    private ShipState targetingAction;
+    private Point targetPosition;
+    private Point targetVector;
+    private double targetAngleAbsolute;
     private double targetDistance;
 
     //radar data
     private RadarResults radar;
-    private ArrayList<ObjectStatus> stationaryObstacles = new ArrayList<ObjectStatus>();
+    private ArrayList<ObjectStatus> stationaryObstacles = new ArrayList<>();
 
     //game and environment information
     private BasicEnvironment env;
-    private ObjectStatus myStatus;
+    private ObjectStatus shipStatus;
+    private BaubleHuntGameInfo gameinfo;
+
+    //function static variables
+    public static final String[] targets = {"Bauble", "Asteroid", "Ship"};
+    public static double ANGLE_BOUNDS = 10;
+    public static final double BRAKE_PERCENT = 0.03;
+    public static final double THRUST_TIME = 0.1;
+    public static final double THRUST_SPEED = 0.1;
 
     //display static variables
     public static final int SHIP_IMAGE_SOVIET = 3;
@@ -50,7 +62,7 @@ public class BattleShip extends BasicSpaceship {
         this.worldHeight = worldHeight;
         this.state = ShipState.RADAR;
         //End init
-        return new RegistrationData("~8~", Color.WHITE, BattleShip.SHIP_IMAGE_SOVIET);
+        return new RegistrationData("turntechGodhead", Color.RED, BattleShip.SHIP_IMAGE_SOVIET);
     }
 
     /**
@@ -71,7 +83,11 @@ public class BattleShip extends BasicSpaceship {
     @Override
     public ShipCommand getNextCommand(BasicEnvironment be) {
         this.env = be;
-        this.myStatus = be.getShipStatus();
+        this.shipStatus = be.getShipStatus();
+        BasicGameInfo bgameinfo = be.getGameInfo();
+        if (bgameinfo instanceof BaubleHuntGameInfo) {
+            this.gameinfo = (BaubleHuntGameInfo) bgameinfo;
+        }
         if (be.getRadar() != null) {
             this.radar = be.getRadar();
             updateStationaryObstacles();
@@ -79,21 +95,68 @@ public class BattleShip extends BasicSpaceship {
         }
         ShipCommand result = null;
         while (result == null) {
+            if (this.state != ShipState.RADAR) {
+                updateTargets();
+            }
             switch (this.state) {
                 case RADAR:
                     result = new RadarCommand(5);
                     break;
                 case START:
+                    //honestly this is here just for tradition's sake
+                    this.state = ShipState.TURN;
                     break;
                 case TURN:
+                    if (this.targetingAction == ShipState.SHOOT) {
+                        this.state = ShipState.SHOOT;
+                    } else {
+                        this.state = ShipState.THRUST;
+                    }
+                    //if i need to turn, do that too
+                    if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.targetAngleAbsolute, BattleShip.ANGLE_BOUNDS)) {
+                        result = new RotateCommand(BattleShip.angleTo(this.shipStatus.getOrientation(), this.targetAngleAbsolute));
+                    }
                     break;
                 case SHOOT:
+                    this.state = ShipState.STOP;
+                    if (this.shipStatus.getEnergy() > AsteroidShip.SHOOT_ENERGY_THRESHOLD) {
+                        if (BattleShip.sameAngle(this.shipStatus.getOrientation(), this.targetAngleAbsolute, BattleShip.ANGLE_BOUNDS)) {
+                            result = new FireTorpedoCommand('F');
+                        } else {
+                            result = new FireTorpedoCommand('B');
+                        }
+                    }
                     break;
                 case THRUST:
+                    ObjectStatus obstacle = obstaclePull();
+                    if (obstacle != null) {
+                        result = new WarpCommand(obstacle.getPullStrength() * 2);
+                    } else if (this.shipStatus.getSpeed() > this.targetDistance / 2) {
+                        //if i'm going too fast, stop
+                        this.state = ShipState.BRAKE;
+                    } else if (!BattleShip.sameAngle(shipStatus.getOrientation(), this.targetAngleAbsolute, BaubleShip.ANGLE_BOUNDS)) {
+                        //if i'm off course brake (then restart)
+                        this.state = ShipState.BRAKE;
+                    } else if (this.shipStatus.getSpeed() < shipStatus.getMaxSpeed()) {
+                        //if i can keep getting faster, speed up
+                        if (this.shipStatus.getSpeed() < this.targetDistance / 2
+                                && this.scalingSpeed < 1 - BattleShip.THRUST_SPEED - 0.005) {
+                            //to attempt to escape nebula relatively easily
+                            this.scalingSpeed += 0.001;
+                        } else {
+                            this.scalingSpeed = 0;
+                        }
+                        result = new ThrustCommand('B', BattleShip.THRUST_TIME, BattleShip.THRUST_SPEED + this.scalingSpeed);
+                    }
                     break;
                 case BRAKE:
+                    updateTargets();
+                    this.state = ShipState.STOP;
+                    result = new BrakeCommand(BattleShip.BRAKE_PERCENT);
                     break;
                 case STOP:
+                    this.state = ShipState.RADAR;
+                    this.radar = null;
                     break;
             }
         }
@@ -101,6 +164,172 @@ public class BattleShip extends BasicSpaceship {
     }
 
     private void updateStationaryObstacles() {
+        List<ObjectStatus> toTest = this.radar.getByType("Planet");
+        toTest.addAll(this.radar.getByType("BlackHole"));
+        for (ObjectStatus current : toTest) {
+            if (!this.stationaryObstacles.contains(current)) {
+                this.stationaryObstacles.add(current);
+            }
+        }
+    }
+
+    private void updateTargets() {
+        boolean goingHome = this.gameinfo.getNumBaublesCarried() >= 5;
+        ObjectStatus targetStatus = selectTarget();
+        //if we actually have a target to shoot at, great
+        if (targetStatus != null) {
+            if (goingHome) {
+                //if I have to return home now, go home no matter what
+                this.targetPosition = this.gameinfo.getHomeBasePosition();
+            } else {
+                //a bauble or asteroid
+                targetStatus = selectTarget();
+                this.targetPosition = targetStatus.getPosition();
+            }
+            this.targetVector = this.direction(shipStatus.getPosition(), this.targetPosition);
+            this.targetAngleAbsolute = BattleShip.getAngle(this.targetVector);
+            this.targetDistance = this.distance(shipStatus.getPosition(), this.targetPosition);
+            if (targetStatus.getType().equals("Bauble") || goingHome) {
+                this.targetingAction = ShipState.THRUST;
+            } else {
+                this.targetingAction = ShipState.SHOOT;
+            }
+        } else {
+            //if we have no target
+            this.targetingAction = ShipState.STOP;
+        }
+    }
+
+    private ObjectStatus selectTarget() {
+        Point mydestination = targetDest(this.shipStatus.getPosition(),
+                this.shipStatus.getMovementDirection(),
+                this.shipStatus.getSpeed());
+        double min = Double.MAX_VALUE;
+        ObjectStatus target = null;
+        for (ObjectStatus testing : this.radar) {
+            if (distance(testing.getPosition(), mydestination) < min) {
+                for (String testingtype : BattleShip.targets) {
+                    if (testingtype.equals(testing.getType())) {
+                        min = distance(testing.getPosition(), mydestination);
+                        target = testing;
+                    }
+                }
+            }
+        }
+        return target;
+    }
+
+    private ObjectStatus obstaclePull() {
+        for (ObjectStatus obstacle : this.stationaryObstacles) {
+            if (distance(this.shipStatus.getPosition(), obstacle.getPosition()) < obstacle.getPullStrength()) {
+                return obstacle;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns a point representing the shortest path from Point p1 to Point p2.
+     *
+     * @param p1 the starting point
+     * @param p2 the ending point
+     * @return vector representing shortest distance
+     */
+    public Point direction(Point p1, Point p2) {
+        //Set up variables
+        double dx = p2.getX() - p1.getX();
+        double dy = p2.getY() - p1.getY();
+        double centerx = this.worldWidth / 2;
+        double centery = this.worldHeight / 2;
+        //Determine if I need to wrap
+        boolean wrapwidth = Math.abs(dx) > centerx;
+        boolean wrapheight = Math.abs(dy) > centery;
+        //Wrap
+        if (wrapwidth) {
+            if (dx < 0) {
+                dx += this.worldWidth;
+            } else {
+                dx -= this.worldWidth;
+            }
+        }
+        if (wrapheight) {
+            if (dy < 0) {
+                dy += this.worldHeight;
+            } else {
+                dy -= this.worldHeight;
+            }
+        }
+        //Return a new Point
+        return new Point(dx, dy);
+    }
+
+    /**
+     * Returns the shortest distance between Point p1 and Point p2
+     *
+     * @param p1 the starting point
+     * @param p2 the ending point
+     * @return the shortest distance between two points
+     */
+    public double distance(Point p1, Point p2) {
+        Point vector = direction(p1, p2);
+        return Math.sqrt(vector.getX() * vector.getX() + vector.getY() * vector.getY());
+    }
+
+    /**
+     * Returns the Point that the object will arrive at, given the parameters.
+     *
+     * @param current the current location
+     * @param angle the angle that the object is facing (Cartesian plane)
+     * @param distToGo the distance to travel forward
+     * @return Point from the current at given angle with given distance away
+     */
+    public Point targetDest(Point current, double angle, double distToGo) {
+        double finalX = current.getX() + distToGo * (Math.cos(Math.toRadians(angle)));
+        double finalY = current.getY() - distToGo * (Math.sin(Math.toRadians(angle)));
+        finalX = BaubleShip.wrap(finalX, this.worldWidth);
+        finalY = BaubleShip.wrap(finalY, this.worldHeight);
+        return new Point(finalX, finalY);
+    }
+
+    public static double angleTo(double currentOrientation, double optimalOrientation) {
+        //if i'm facing the wrong way rotate
+        double rotation = optimalOrientation - currentOrientation;
+        //fix over-180 rotations
+        while (Math.abs(rotation) > 180) {
+            if (rotation > 0) {
+                rotation = rotation - 360;
+            } else {
+                rotation = rotation + 360;
+            }
+        }
+        return rotation;
+    }
+
+    /**
+     * Returns the degree of the Point (which represents a vector).
+     *
+     * @param vector a vector
+     * @return degree of given vector
+     */
+    public static double getAngle(Point vector) {
+        double degree = Math.toDegrees(Math.atan(-vector.getY() / vector.getX()));
+        if (vector.getX() < 0) {
+            degree += 180;
+        }
+        return degree;
+    }
+
+    /**
+     * Returns if the two angles are effectively the same. (Double calculation
+     * logic.)
+     *
+     * @param a1 the first angle to match
+     * @param a2 the second angle to match
+     * @param anglebounds the accuracy to match to
+     * @return if the two angles are the same
+     */
+    public static boolean sameAngle(double a1, double a2, double anglebounds) {
+        return Math.abs(a1 - (a2 + 360) % 360) < anglebounds;
     }
 
 }
