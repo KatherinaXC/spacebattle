@@ -5,7 +5,7 @@ import java.awt.Color;
 
 /**
  *
- * @author s-zhouj
+ * @author s-zhoujz
  */
 public class TrollShip extends BasicSpaceship {
 
@@ -13,7 +13,7 @@ public class TrollShip extends BasicSpaceship {
     private boolean Shooting = false;
 
     public RegistrationData registerShip(int numImages, int worldWidth, int worldHeight) {
-        return new RegistrationData("802.11g Hotspot", Color.WHITE, OldBattleShip.SHIP_IMAGE_TARDIS);
+        return new RegistrationData("????????", Color.WHITE, OldBattleShip.SHIP_IMAGE_TARDIS);
     }
 
     @Override

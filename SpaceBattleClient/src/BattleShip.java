@@ -197,7 +197,7 @@ public class BattleShip extends BasicSpaceship {
      */
     private void updateTargets() {
         //Basic variables so we can read them easily and not retype :P
-        boolean goingHome = this.gameinfo.getNumBaublesCarried() >= 5;
+        boolean goingHome = this.gameinfo.getNumBaublesCarried() >= 3;
         ObjectStatus targetStatus = selectTarget();
         //if we actually have a target to shoot at, great
         if (targetStatus != null) {
